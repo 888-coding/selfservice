@@ -4,3 +4,24 @@
 import sqlite3 as s
 import os
 
+def main():
+    os.system("cls")
+    print_title()
+    print_menu_main()
+
+def print_title():
+    for i in range(30):
+        print("*", end="")
+        if i == 29 :
+            print("\n", end="")
+    print("Self Service Easy App")
+    for i in range(30):
+        print("*", end="")
+        if i == 29 :
+            print("\n", end="")
+
+def print_menu_main():
+    menu_main_list = ['Vender', 'Produtos', 'Relatorios']
+    for i in range(len(menu_main_list)):
+        print(i+1, menu_main_list[i])
+main()

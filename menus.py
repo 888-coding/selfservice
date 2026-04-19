@@ -61,7 +61,7 @@ def menu_products():
     company_title()
     print("<  Produtos  >")
     print(" . . . . . . .")
-    menu_products_list = ['Cadastrar', 'Alterar', 'Mostrar todos']
+    menu_products_list = ['Cadastrar', 'Alterar Nome', 'Alterar Preço','Mostrar todos']
     for i in range(len(menu_products_list)):
         print(i+1, menu_products_list[i])
     
@@ -72,7 +72,19 @@ def menu_products():
         if int(input_selected) > len(menu_products_list):
             print("Erro")
         else:
-            if input_selected == "0":
+            if input_selected == "1":
+                from products import product_new
+                product_new
+            elif input_selected == "2":
+                from products import product_change_name
+                product_change_name
+            elif input_selected == "3":
+                from products import product_change_price
+                product_change_price
+            elif input_selected == "4":
+                from products import product_showall
+                product_showall
+            elif input_selected == "0":
                 menu_main()
 
             break

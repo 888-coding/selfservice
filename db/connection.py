@@ -9,3 +9,4 @@ def get_connection():
     db_path = os.path.join(base_dir, database_name)
 
     connection = s.connect(db_path)
+    return connection

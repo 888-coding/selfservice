@@ -32,7 +32,7 @@ def menu_main():
                 menu_products()
             elif input_selected == "3":
                 menu_relatorios()
-            elif input == "0":
+            elif input_selected == "0":
                 exit()
             break
 def menu_vendas():
@@ -63,9 +63,8 @@ def menu_products():
     print(" . . . . . . .")
     menu_products_list = ['Cadastrar', 'Alterar Nome', 'Alterar Preço','Mostrar todos']
     for i in range(len(menu_products_list)):
-        print(i+1, menu_products_list[i])
-    
-    print("0 Voltar")
+        print(f"{i+1}. {menu_products_list[i]}")
+    print("0. Voltar")
     print("\n", end="")
     while True:
         input_selected = input("> Escolhe uma opção :  ")
@@ -73,16 +72,16 @@ def menu_products():
             print("Erro")
         else:
             if input_selected == "1":
-                from products import product_new
+                from services.products import product_new
                 product_new
             elif input_selected == "2":
-                from products import product_change_name
+                from services.products import product_change_name
                 product_change_name
             elif input_selected == "3":
-                from products import product_change_price
+                from services.products import product_change_price
                 product_change_price
             elif input_selected == "4":
-                from products import product_showall
+                from services.products import product_showall
                 product_showall
             elif input_selected == "0":
                 menu_main()
@@ -109,3 +108,4 @@ def menu_relatorios():
                 menu_main()
 
             break
+

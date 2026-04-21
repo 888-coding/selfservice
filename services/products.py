@@ -21,6 +21,16 @@ def create_product(code, name, price):
         con.close()
 
 def search_all_products():
+    con = get_connection()
+    try:
+        cursor = con.cursor()
+        sql = "SELECT code, name, price FROM products"
+        cursor.execute(sql)
+        result = cursor.fetchall()
+        return(result)
+    finally:
+        con.close()
+
     pass
 
 def change_product_name():

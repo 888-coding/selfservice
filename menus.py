@@ -88,6 +88,9 @@ def menu_products():
                     print("\n\nCadastrado com sucesso!")
                 else:
                     print("\n\nERRO! Já existe !!")
+
+                input_selected == input("\n\nDigite algo para continuar...")
+                menu_main()
                 
             elif input_selected == "2":
                 change_product_name()

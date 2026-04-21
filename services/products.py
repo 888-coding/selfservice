@@ -2,6 +2,7 @@
 from db.connection import get_connection
 
 def create_product():
+    print("Cadastro de produto")
     pass
 
 def search_all_products():

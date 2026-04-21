@@ -57,6 +57,12 @@ def menu_vendas():
             break
 
 def menu_products():
+    from services.products import (
+        create_product,
+        search_all_products,
+        change_product_name,
+        change_product_price
+    )
     os.system("cls")
     company_title()
     print("<  Produtos  >")
@@ -72,17 +78,17 @@ def menu_products():
             print("Erro")
         else:
             if input_selected == "1":
-                from services.products import product_new
-                product_new
+                os.system("cls")
+                print("\n\n Cadastro de produto \n")
+                code = input("Codigo : ")
+                name = input("Nome : ")
+                create_product(code, name)
             elif input_selected == "2":
-                from services.products import product_change_name
-                product_change_name
+                change_product_name()
             elif input_selected == "3":
-                from services.products import product_change_price
-                product_change_price
+                change_product_price()
             elif input_selected == "4":
-                from services.products import product_showall
-                product_showall
+                search_all_products()
             elif input_selected == "0":
                 menu_main()
 

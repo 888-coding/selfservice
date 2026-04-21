@@ -82,7 +82,13 @@ def menu_products():
                 print("\n\n Cadastro de produto \n")
                 code = input("Codigo : ")
                 name = input("Nome : ")
-                create_product(code, name)
+                price = input("Preco : ")
+                result = create_product(code, name, price)
+                if result == True:
+                    print("\n\nCadastrado com sucesso!")
+                else:
+                    print("\n\nERRO! Já existe !!")
+                
             elif input_selected == "2":
                 change_product_name()
             elif input_selected == "3":

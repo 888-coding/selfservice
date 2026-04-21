@@ -9,8 +9,8 @@ def init_bd():
     CREATE TABLE IF NOT EXISTS products (
         id INTEGER PRIMARY KEY AUTOINCREMENT, 
         code TEXT NOT NULL, 
-        nome TEXT NOT NULL, 
-        preco INT 
+        name TEXT NOT NULL, 
+        price INT 
     )
     """)
 

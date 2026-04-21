@@ -1,9 +1,24 @@
 # Products 
 from db.connection import get_connection
 
-def create_product():
-    print("Cadastro de produto")
-    pass
+def create_product(code, name, price):
+    con = get_connection()
+    try:
+        cursor = con.cursor()
+        # First , Search if there is a created code
+        sql = "SELECT code, name, price FROM products WHERE code = ?"
+        cursor.execute(sql, (code,))
+        result = cursor.fetchone()
+        if result is None:
+            # If Nothing searched, then insert to database 
+            sql = "INSERT INTO products (code, name, price) VALUES (?, ?, ?)"
+            cursor.execute(sql, (code, name, price,) )
+            con.commit()
+            return True
+        else:
+            return False
+    finally:
+        con.close()
 
 def search_all_products():
     pass

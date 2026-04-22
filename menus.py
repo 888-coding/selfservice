@@ -97,7 +97,10 @@ def menu_products():
             elif input_selected == "3":
                 change_product_price()
             elif input_selected == "4":
-                search_all_products()
+                products = search_all_products()
+                for product in products:
+                    print(product)
+                
             elif input_selected == "0":
                 menu_main()
 

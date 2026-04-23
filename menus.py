@@ -100,7 +100,8 @@ def menu_products():
                 products = search_all_products()
                 for product in products:
                     print(product)
-                
+                input("\n\nDigite Algo para continuar...")
+                menu_main()
             elif input_selected == "0":
                 menu_main()
 

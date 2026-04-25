@@ -93,7 +93,20 @@ def menu_products():
                 menu_main()
                 
             elif input_selected == "2":
-                change_product_name()
+                os.system("cls")
+                print("\n\nAlterar nome de produto.")
+                code = input("Codigo do produto : ")
+                new_name = input("Novo nome: ")
+                result = change_product_name(code, new_name)
+
+                if result is True:
+                    print("\n\nCadastrado com sucesso")
+                else:
+                    print("\n\nPor algum motivo, nao foi cadastrado")
+                
+                input("Digite algo para continuar ... ")
+                menu_main()
+                
             elif input_selected == "3":
                 change_product_price()
             elif input_selected == "4":

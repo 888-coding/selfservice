@@ -33,7 +33,23 @@ def search_all_products():
 
     pass
 
-def change_product_name():
+def change_product_name(code, new_name):
+    con = get_connection()
+    try:
+        cursor = con.cursor()
+        sql = "SELECT id, code, name FROM products WHERE code = ? "
+        cursor.execute(sql, (code,) )
+        result = cursor.fetchone()
+        if result is None:
+            return False
+        else:
+            id = result[0]
+            sql = "UPDATE products SET name = ? WHERE id = ?"
+            cursor.execute(sql, (new_name,id, ))
+            con.commit()
+            return True
+    finally:
+        con.close()
     pass
 
 def change_product_price():

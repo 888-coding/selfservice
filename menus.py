@@ -51,7 +51,13 @@ def menu_vendas():
         if int(input_selected) > len(menu_products_list):
             print("Erro")
         else:
-            if input_selected == "0":
+            if input_selected == "1":
+                pass
+            elif input_selected == "2":
+                pass
+            elif input_selected == "3":
+                pass
+            elif input_selected == "0":
                 menu_main()
 
             break
@@ -116,7 +122,7 @@ def menu_products():
                 result = change_product_price(code, new_price)
 
                 if result is True:
-                    print("Alterado com sucesso")
+                    print("Preço alterado com sucesso")
                 else:
                     print("ERRO!!! Não foi atualizado.")
                 
@@ -149,7 +155,13 @@ def menu_relatorios():
         if int(input_selected) > len(menu_products_list):
             print("Erro")
         else:
-            if input_selected == "0":
+            if input_selected == "1":
+                pass
+            elif input_selected == "2":
+                pass
+            elif input_selected == "3":
+                pass
+            elif input_selected == "0":
                 menu_main()
 
             break

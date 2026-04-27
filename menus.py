@@ -36,6 +36,11 @@ def menu_main():
                 exit()
             break
 def menu_vendas():
+    from services.selling import(
+        selling_action,
+        selling_alter,
+        selling_show_today
+    )
     os.system("cls")
     company_title()
     print("<  Vender  >")
@@ -52,7 +57,9 @@ def menu_vendas():
             print("Erro")
         else:
             if input_selected == "1":
-                pass
+                os.system("cls")
+                print("\n\n\nVender :")
+                
             elif input_selected == "2":
                 pass
             elif input_selected == "3":

@@ -72,6 +72,6 @@ def change_product_price(code, new_price):
 
 
     finally:
-        pass
+        con.close()
     pass
 

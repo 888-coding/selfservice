@@ -108,7 +108,20 @@ def menu_products():
                 menu_main()
                 
             elif input_selected == "3":
-                change_product_price()
+                os.system("cls")
+                print("\n\nAlterar valor do produto.")
+                code = input("Codigo do produto ")
+                new_price = input("Novo preço : ")
+
+                result = change_product_price(code, new_price)
+
+                if result is True:
+                    print("Alterado com sucesso")
+                else:
+                    print("ERRO!!! Não foi atualizado.")
+                
+                input("\n\nDigite algo para continuar ...")
+                menu_main()
             elif input_selected == "4":
                 products = search_all_products()
                 for product in products:

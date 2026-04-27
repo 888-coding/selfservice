@@ -52,6 +52,26 @@ def change_product_name(code, new_name):
         con.close()
     pass
 
-def change_product_price():
+def change_product_price(code, new_price):
+    con = get_connection()
+    try:
+        cursor = con.cursor()
+        sql = "SELECT id, name FROM products WHERE code = ?" 
+        cursor.execute(sql , (code,) )
+        result = cursor.fetchone() 
+        if result is None:
+            return False
+        else:
+            print("Encontrado o arquivo ")
+            print(f"\n{result[1]}")
+            id = result[0]
+            sql = "UPDATE products SET price = ? WHERE id = ? "
+            cursor.execute(sql, (new_price, id, ) )
+            con.commit()
+            return True
+
+
+    finally:
+        pass
     pass
 

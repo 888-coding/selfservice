@@ -11,9 +11,20 @@ def init_bd():
         code TEXT NOT NULL, 
         name TEXT NOT NULL, 
         price INT 
-    )
+    );
     """)
-
-
+    conn.commit()
+    
+    cursor.execute("""                
+    CREATE TABLE IF NOT EXISTS sales(
+        id INTEGER PRIMARY KEY AUTOINCREMENT,
+        date_time DATETIME DEFAULT CURRENT_TIMESTAMP,
+        total_amount INTEGER NOT NULL,
+        discount INTEGER DEFAULT 0,
+        final_amount INTEGER NOT NULL,
+        payment_method TEXT,
+        status TEXT NOT NULL
+    )           
+    """)
     conn.commit()
     conn.close()

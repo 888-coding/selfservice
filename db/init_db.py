@@ -15,7 +15,8 @@ def init_bd():
     """)
     conn.commit()
     
-    cursor.execute("""                
+
+    cursor.execute("""
     CREATE TABLE IF NOT EXISTS sales(
         id INTEGER PRIMARY KEY AUTOINCREMENT,
         date_time DATETIME DEFAULT CURRENT_TIMESTAMP,
@@ -24,7 +25,8 @@ def init_bd():
         final_amount INTEGER NOT NULL,
         payment_method TEXT,
         status TEXT NOT NULL
-    )           
+    )
     """)
+    conn.commit()
     conn.commit()
     conn.close()

@@ -27,5 +27,7 @@ def init_bd():
         status TEXT NOT NULL
     )
     """)
+
+    # TODO: Criar a tabela do conteudo da vendas 
     conn.commit()
     conn.close()

@@ -28,5 +28,4 @@ def init_bd():
     )
     """)
     conn.commit()
-    conn.commit()
     conn.close()

@@ -30,4 +30,10 @@ def init_bd():
 
     # TODO: Criar a tabela do conteudo da vendas 
     conn.commit()
+
+    cursor.execute("""
+    CREATE TABLE IF NOT EXISTS sales_items(
+        id INTEGER PRIMAY KEY AUTOINCREMENT, 
+    )
+    """)    
     conn.close()

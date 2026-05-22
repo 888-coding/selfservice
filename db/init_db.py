@@ -32,8 +32,13 @@ def init_bd():
     conn.commit()
 
     cursor.execute("""
-    CREATE TABLE IF NOT EXISTS sales_items(
-        id INTEGER PRIMAY KEY AUTOINCREMENT, 
+    CREATE TABLE IF NOT EXISTS sale_items(
+        id INTEGER PRIMAY KEY AUTOINCREMENT,
+        sale_id INTEGER, 
+        product_id INTEGER, 
+        quantity INTEGER, 
+        unit_price INTEGER, 
+        total_price INTEGER 
     )
     """)    
     conn.close()

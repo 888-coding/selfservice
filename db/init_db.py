@@ -28,8 +28,9 @@ def init_bd():
     )
     """)
 
-    # TODO: Criar a tabela do conteudo da vendas 
     conn.commit()
+    
+    # TODO: Criar a tabela do conteudo da vendas 
 
     cursor.execute("""
     CREATE TABLE IF NOT EXISTS sale_items(
@@ -40,5 +41,8 @@ def init_bd():
         unit_price INTEGER, 
         total_price INTEGER 
     )
-    """)    
+    """)
+
+    conn.commit()
+    
     conn.close()

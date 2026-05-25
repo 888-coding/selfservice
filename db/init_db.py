@@ -27,14 +27,11 @@ def init_bd():
         status TEXT NOT NULL
     )
     """)
-
     conn.commit()
     
-    # TODO: Criar a tabela do conteudo da vendas 
-
     cursor.execute("""
     CREATE TABLE IF NOT EXISTS sale_items(
-        id INTEGER PRIMAY KEY AUTOINCREMENT,
+        id INTEGER PRIMARY KEY AUTOINCREMENT,
         sale_id INTEGER, 
         product_id INTEGER, 
         quantity INTEGER, 

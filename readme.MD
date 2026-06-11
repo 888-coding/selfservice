@@ -8,4 +8,6 @@ SelfService será um programa para self service de restaurante, o qual terá um 
 
 # Qual linguagem de programação vai ser feito ? 
 
-Python , com banco de dados sqlite.
+Python , com banco de dados sqlite. 
+
+adicionando linha nova somente para teste

@@ -13,7 +13,7 @@ def company_title():
             print("\n", end="")
 
 def menu_main():
-    os.system("cls")
+    os.system("clear")
     company_title()
     menu_main_list = ['Vender', 'Produtos', 'Relatorios']
     for i in range(len(menu_main_list)):
@@ -41,7 +41,7 @@ def menu_vendas():
         selling_alter,
         selling_show_today
     )
-    os.system("cls")
+    os.system("clear")
     company_title()
     print("<  Vender  >")
     print(" . . . . . . .")
@@ -57,7 +57,7 @@ def menu_vendas():
             print("Erro")
         else:
             if input_selected == "1":
-                os.system("cls")
+                os.system("clear")
                 print("\n\n\nVender :")
                 
             elif input_selected == "2":
@@ -76,7 +76,7 @@ def menu_products():
         change_product_name,
         change_product_price
     )
-    os.system("cls")
+    os.system("clear")
     company_title()
     print("<  Produtos  >")
     print(" . . . . . . .")
@@ -91,7 +91,7 @@ def menu_products():
             print("Erro")
         else:
             if input_selected == "1":
-                os.system("cls")
+                os.system("clear")
                 print("\n\n Cadastro de produto \n")
                 code = input("Codigo : ")
                 name = input("Nome : ")
@@ -106,7 +106,7 @@ def menu_products():
                 menu_main()
                 
             elif input_selected == "2":
-                os.system("cls")
+                os.system("clear")
                 print("\n\nAlterar nome de produto.")
                 code = input("Codigo do produto : ")
                 new_name = input("Novo nome: ")
@@ -121,7 +121,7 @@ def menu_products():
                 menu_main()
                 
             elif input_selected == "3":
-                os.system("cls")
+                os.system("clear")
                 print("\n\nAlterar valor do produto.")
                 code = input("Codigo do produto ")
                 new_price = input("Novo preço : ")
@@ -147,7 +147,7 @@ def menu_products():
             break
 
 def menu_relatorios():
-    os.system("cls")
+    os.system("clear")
     company_title()
     print("<  Relatorios  >")
     print(" . . . . . . .")

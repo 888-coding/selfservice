@@ -56,4 +56,9 @@ def cadastrar_produto():
         
         print(f"CODIGO : {codigo_produto} - NOME: {nome_produto} - PREÇO : {preco_produto}")
         input("Digite enter para continuar ...")
-        break 
+        break
+
+
+    def consultar_produtos()
+        pass
+    

@@ -60,5 +60,9 @@ def cadastrar_produto():
 
 
     def consultar_produtos()
+        while True:
+            os.system("clear")
+            print("")
+
+            break
         pass
-    

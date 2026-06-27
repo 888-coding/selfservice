@@ -62,7 +62,10 @@ def cadastrar_produto():
     def consultar_produtos()
         while True:
             os.system("clear")
-            print("")
+            print("Consulta de produtos")
+            print("--------------------")
+            print("Codigo      Produto          Valor")
+            print("001         YAKISSOBA        29,90")
 
             break
         pass

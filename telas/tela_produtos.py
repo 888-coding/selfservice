@@ -13,7 +13,7 @@ def telaProdutos():
         if opcao == "1":
             cadastrar_produto()
         elif opcao == "2":
-            pass
+            consultar_produtos()
         elif opcao == "3":
             pass
         elif opcao == "4":
@@ -59,13 +59,13 @@ def cadastrar_produto():
         break
 
 
-    def consultar_produtos()
+def consultar_produtos():
         while True:
             os.system("clear")
             print("Consulta de produtos")
             print("--------------------")
             print("Codigo      Produto          Valor")
             print("001         YAKISSOBA        29,90")
-
+            input("Digite algo para continuar ..")
             break
         pass

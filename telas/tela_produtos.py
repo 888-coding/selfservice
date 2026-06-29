@@ -66,6 +66,24 @@ def consultar_produtos():
             print("--------------------")
             print("Codigo      Produto          Valor")
             print("001         YAKISSOBA        29,90")
-            input("Digite algo para continuar ..")
+            input("Digite algo para continuar ..") 
             break
-        pass
+
+def alterar_nome_produto():
+    while True:
+        os.system("clear")
+        print('Alterar Nome do produto')
+        print('-----------------------\n')
+        input_codigo = input('Digite o codigo para procurar : ')
+
+        # Aqui precisa procurar codigo 
+        pesquisa = True
+
+        if pesquisa == True:
+            pass
+        else:
+            print('Nao foi encontrado valor')
+            input('Digite algo para continuar ...')
+            break
+        break    
+    pass

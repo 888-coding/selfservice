@@ -87,7 +87,9 @@ def alterar_nome_produto():
             print(f"Nome: {nome}\n\n")
 
             nome_alterado = input("Alterar o nome para : ")
-            
+
+
+            # Aqui atualizar o nome no BD
         else:
             print('Nao foi encontrado valor')
             input('Digite algo para continuar ...')

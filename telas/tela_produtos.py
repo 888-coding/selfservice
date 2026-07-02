@@ -80,7 +80,14 @@ def alterar_nome_produto():
         pesquisa = True
 
         if pesquisa == True:
-            pass
+            print("\nFoi encontrado o codigo")
+            codigo = 123
+            nome = "pablo"
+            print(f"Codigo: {codigo}")
+            print(f"Nome: {nome}\n\n")
+
+            nome_alterado = input("Alterar o nome para : ")
+            
         else:
             print('Nao foi encontrado valor')
             input('Digite algo para continuar ...')

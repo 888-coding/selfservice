@@ -98,7 +98,7 @@ def alterar_nome_produto():
 
         # Aqui precisa procurar codigo 
         pesquisa = True
-        codigo = 01
+        codigo = '01'
         nome_inicial = 'Pablo'
         valor = 100
         if pesquisa == True:
@@ -132,12 +132,14 @@ def alterar_preco_produto():
 
         # Aqui vai procurar o codigo se existe 
 
-        pesquisa = False
+        pesquisa = True
         # Se existe aqui 
-        if pesquisa == True :
-            print("Achamos o codigo , aguarde um pouco ..")
+        if input_codigo == '0':
             break
-
-        # Se não existe aqui
         else:
-            input("Não foi encontrado ... \n")
+            if pesquisa == True :
+                input("Achamos o codigo , cotinue com enter ..")
+                break
+            # Se não existe aqui
+            else:
+                input("Não foi encontrado ... \n")

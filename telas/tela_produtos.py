@@ -15,13 +15,33 @@ def telaProdutos():
         elif opcao == "2":
             consultar_produtos()
         elif opcao == "3":
-            pass
+            telaAlterarProduto()
         elif opcao == "4":
             pass
         elif opcao == "0":
             break 
         else:
             input("Opção inválida ... Pressione enter para continuar")
+
+def telaAlterarProduto():
+    while True:
+        os.system("clear")
+        print("ALTERAR PRODUTO")
+        print("---------------")
+        print("1. ALTERAR NOME")
+        print("2. ALTERAR PREÇO")
+        print("0. VOLTAR")
+
+        opcao = input("Opção : ")
+
+        if opcao == "1":
+            alterar_nome_produto()
+        elif opcao == "2":
+            alterar_preco_produto()
+        elif opcao == "0":
+            break
+        else:
+            input("Digite uma opcao correta!")
 
 
 def cadastrar_produto():
@@ -78,21 +98,46 @@ def alterar_nome_produto():
 
         # Aqui precisa procurar codigo 
         pesquisa = True
-
+        codigo = 01
+        nome_inicial = 'Pablo'
+        valor = 100
         if pesquisa == True:
             print("\nFoi encontrado o codigo")
-            codigo = 123
-            nome = "pablo"
             print(f"Codigo: {codigo}")
-            print(f"Nome: {nome}\n\n")
+            print(f"Nome: {nome_inicial}\n\n")
 
-            nome_alterado = input("Alterar o nome para : ")
+            while True:
+                nome_alterado = input("Alterar o nome para : ")
+                if nome_alterado == None:
+                    input("Erro.. Pressione enter")
+                else:
+                    break
 
-
+            print(f"Nome antigo : {nome_inicial} ")
+            print(f"Nome alterado : {nome_alterado} ")
+            
             # Aqui atualizar o nome no BD
         else:
             print('Nao foi encontrado valor')
             input('Digite algo para continuar ...')
             break
         break    
-    pass
+
+def alterar_preco_produto():
+    while True:
+        os.system("clear")
+        print("ALTERAR PREÇO DO PRODUTO")
+        print("------------------------")
+        input_codigo = input("Codigo do produto : ")
+
+        # Aqui vai procurar o codigo se existe 
+
+        pesquisa = False
+        # Se existe aqui 
+        if pesquisa == True :
+            print("Achamos o codigo , aguarde um pouco ..")
+            break
+
+        # Se não existe aqui
+        else:
+            input("Não foi encontrado ... \n")

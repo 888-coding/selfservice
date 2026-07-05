@@ -145,23 +145,22 @@ def alterar_preco_produto():
                 input("Não foi encontrado ... \n")
 
 def inativar_produto():
-    os.system("clear")
-    print("INATIVAR PRODUTO")
-    print("----------------")
-    input_codigo = input("Digite o codigo para inativar (zero para sair) :  ")
+    while True:
+        os.system("clear")
+        print("INATIVAR PRODUTO")
+        print("----------------")
+        input_codigo = input("Digite o codigo para inativar (zero para sair) :  ")
 
-    pesquisa = True 
+        pesquisa = True
 
-    # Aqui precisa procurar o codigo 
+        # Aqui precisa procurar o codigo
 
-    if input_codigo == "0":
-        break
-    else:
-        if pesquisa == True :
-            # Aqui Achou o produto 
-            pass
+        if input_codigo == "0":
+            break
         else:
-            # Aqui não achou o produto
-            pass
-
-
+            if pesquisa == True :
+                # Aqui Achou o produto
+                pass
+            else:
+                # Aqui não achou o produto
+                pass

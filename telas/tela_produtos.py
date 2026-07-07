@@ -101,7 +101,7 @@ def alterar_nome_produto():
         codigo = '01'
         nome_inicial = 'Pablo'
         valor = 100
-        if pesquisa == True:
+        if pesquisa :
             print("\nFoi encontrado o codigo")
             print(f"Codigo: {codigo}")
             print(f"Nome: {nome_inicial}\n\n")
@@ -137,7 +137,7 @@ def alterar_preco_produto():
             break
         else:
             # Se existe aqui
-            if pesquisa == True :
+            if pesquisa :
                 input("Achamos o codigo , cotinue com enter ..")
                 break
             # Se não existe aqui
@@ -158,8 +158,13 @@ def inativar_produto():
         if input_codigo == "0":
             break
         else:
-            if pesquisa == True :
+            if pesquisa :
                 # Aqui Achou o produto
+                os.system("clear")
+                print(f"Codigo do produto : {input_codigo}")
+                print("--------------------------------")
+                input("Codigo achado ! ")
+
                 pass
             else:
                 # Aqui não achou o produto

@@ -1,6 +1,7 @@
 # tela principal
 import os 
 from telas.tela_produtos import telaProdutos
+from telas.tela_vender import telaVender
 
 def telaPrincipal():
     while True:
@@ -17,7 +18,7 @@ def telaPrincipal():
         if input_value == "1":
             telaProdutos()
         elif input_value == "2":
-            pass
+            telaVender()
         elif input_value == "3":
             pass
         elif input_value == "0":

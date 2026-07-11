@@ -139,6 +139,7 @@ def alterar_preco_produto():
             # Se existe aqui
             if pesquisa :
                 input("Achamos o codigo , cotinue com enter ..")
+                # Inativar o codigo de produto
                 break
             # Se não existe aqui
             else:

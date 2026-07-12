@@ -14,7 +14,7 @@ def telaVender():
         input_opcao = input("Opção : ")
         
         if input_opcao  == "1":
-            pass
+            telaVenderCadastrar ()
         elif input_opcao == "2":
             pass
         elif input_opcao == "3":
@@ -25,3 +25,12 @@ def telaVender():
             break
         else:
             input("Escolha opção certa ! Continue com enter...")
+
+def telaVenderCadastrar():
+    os.system("clear")
+    print("Vendas - Cadastro")
+    print("-----------------")
+    while True:
+        print("Codigo de produto : ")
+        input_codigo_produto = input(" > ")
+

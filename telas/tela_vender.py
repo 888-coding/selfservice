@@ -30,20 +30,16 @@ def telaVenderCadastrar():
     os.system("clear")
     print("Vendas - Cadastro")
     print("-----------------")
+    input_data = input("Data do pedido : ")
     while True:
-        input_data = input("Data do pedido : ")
+        input_codigo_produto = input("Codigo do produto : ")
+        input_qte_produto = input("Quantidade : ")
+        
         while True:
-            input_codigo_produto = input("Codigo do produto : ")
-            input_qte_produto = input("Quantidade : ")
             desejaContinuar = input("Deseja adicionar mais (s/n) ? : ").upper()
-            while True:
-                if desejaContinuar == "S":
-                    # Adicionar produto
-                    input("Adicionando produto ...")
-                    break
-                    pass
-                elif desejaContinuar == "N":
-                    break
-                else:
-                    input("ERRO! Digite S (sim) ou N (nao) !")
+            if desejaContinuar != "S" or desejaContinuar != "N":
+                input("Erro. Digite valor correto")
+            else:
+                break
+
 

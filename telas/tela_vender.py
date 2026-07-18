@@ -37,9 +37,15 @@ def telaVenderCadastrar():
         
         while True:
             desejaContinuar = input("Deseja adicionar mais (s/n) ? : ").upper()
-            if desejaContinuar != "S" or desejaContinuar != "N":
+            if desejaContinuar != "S" and desejaContinuar != "N":
                 input("Erro. Digite valor correto")
             else:
                 break
+
+        if desejaContinuar == "N":
+            # Se nao deseja adicionar mais, 
+            # Continua para proximo passo 
+
+
 
 

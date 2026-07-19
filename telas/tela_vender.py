@@ -42,8 +42,12 @@ def telaVenderCadastrar():
             input("Erro. Digite valor correto")
 
         if desejaContinuar == "N":
+            break
             # Se nao deseja adicionar mais, 
             # Continua para proximo passo 
+    print("Pedido feito : ")
+    print(f"Codigo do produto {input_codigo_produto} Quantidade : {input_qte_produto} ")
+    input("Digite enter para continuar ...")
 
 
 

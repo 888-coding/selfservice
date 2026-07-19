@@ -31,10 +31,12 @@ def telaVenderCadastrar():
     print("Vendas - Cadastro")
     print("-----------------")
     input_data = input("Data do pedido : ")
+
+    lista_produtos = []
     while True:
         input_codigo_produto = input("Codigo do produto : ")
         input_qte_produto = input("Quantidade : ")
-        
+        lista_produtos.append((input_codigo_produto, input_qte_produto))
         while True:
             desejaContinuar = input("Deseja adicionar mais (s/n) ? : ").upper()
             if desejaContinuar in ("S", "N"):
@@ -46,7 +48,8 @@ def telaVenderCadastrar():
             # Se nao deseja adicionar mais, 
             # Continua para proximo passo 
     print("Pedido feito : ")
-    print(f"Codigo do produto {input_codigo_produto} Quantidade : {input_qte_produto} ")
+    for codigo, quantidade in lista_produtos:
+        print(f"Codigo do produto {codigo} Quantidade : {quantidade} ")
     input("Digite enter para continuar ...")
 
 

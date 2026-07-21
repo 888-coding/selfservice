@@ -17,7 +17,7 @@ def telaVender():
         if input_opcao  == "1":
             telaVenderCadastrar ()
         elif input_opcao == "2":
-            pass
+            telaVenderConsultar()
         elif input_opcao == "3":
             pass
         elif input_opcao == "4":
@@ -59,6 +59,7 @@ def telaVenderCadastrar():
     # TODO : Aqui vai ser gravado dados para banco de dados 
 
 def telaVenderConsultar():
+    os.system("clear")
     print("Consultar Pedido")
     print("----------------")
     print("1. Hoje")
@@ -73,8 +74,18 @@ def telaVenderConsultar():
             input("Opção inválida! .. Enter para continuar")
 
     # Parte 1 : Consultar por hoje 
-
+    if opcao == "1":
+        input("Você escolheu opção 1 . Consultar hoje ")
+        script_sql = ""
     # Parte 2 : Consultar por data escolhida
-
+    elif opcao == "2":
+        input("Você escolheu opção 2 . Consultar por data ")
+        script_sql = ""
     # Parte 3 : Consultar por codigo de pedido
+    elif opcao == "3":
+        input("Você escolheu opção 3 . Consultar por codigo de pedido ")
+        script_sql = ""
+
+    # TODO: Aqui vai inserir o comando script para procurar pedido
+
 

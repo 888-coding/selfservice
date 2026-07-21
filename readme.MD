@@ -10,5 +10,13 @@ SelfService será um programa para self service de restaurante, o qual terá um 
 
 Python , com banco de dados sqlite. 
 
-adicionando linha nova somente para teste
-asd
+
+# TODO
+
+O que precisa ser feito agora ? 
+
+Tela -> Vender -> Consulta 
+		          -> Procurar por dia
+			  	-> Procurar por hoje 
+				-> Procurar escolhendo data 
+			  -> Procurar por codigo de pedido 

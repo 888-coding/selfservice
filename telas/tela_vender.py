@@ -58,5 +58,23 @@ def telaVenderCadastrar():
 
     # TODO : Aqui vai ser gravado dados para banco de dados 
 
+def telaVenderConsultar():
+    print("Consultar Pedido")
+    print("----------------")
+    print("1. Hoje")
+    print("2. Por data")
+    print("3. Por codigo")
+    while True:
+        opcao = input("\n> Opção: ")
 
+        if opcao in ("1", "2", "3"):
+            break
+        else:
+            input("Opção inválida! .. Enter para continuar")
+
+    # Parte 1 : Consultar por hoje 
+
+    # Parte 2 : Consultar por data escolhida
+
+    # Parte 3 : Consultar por codigo de pedido
 

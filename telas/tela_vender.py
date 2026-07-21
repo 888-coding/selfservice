@@ -1,4 +1,5 @@
 import os
+import time
 
 def telaVender():
     while True:
@@ -51,9 +52,11 @@ def telaVenderCadastrar():
     print(f"Data : {input_data}")
     for codigo, quantidade in lista_produtos:
         print(f"Codigo do produto {codigo} | Quantidade : {quantidade} ")
-    input("Digite enter para continuar ...")
-    print("OBS: Imprindo a lista para entender :")
-    print(lista_produtos)
-    input("Continuar ... ")
+    input("guardando dados ...")
+    time.sleep(3)
+    input("... gravado !  ")
+
+    # TODO : Aqui vai ser gravado dados para banco de dados 
+
 
 

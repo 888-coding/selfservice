@@ -14,12 +14,14 @@ valor
 
 id
 data
+valor desconto
+valor total
 
 
 ### 2.2 Detalhe
 
 id
-idPedido
+id do pedido
 id do produto 
 quantidade do produto 
 valor do produto 

@@ -2,8 +2,8 @@ import os
 import sqlite3
 
 def createDb():
-    con = sqlite3.connect("pandaDb.db")
-    con.execute("""
+    con = sqlite3.connect("db/pandaDb.db")
+    con.executescript("""
     CREATE TABLE IF NOT EXISTS "products" (
         "id" INTEGER NOT NULL,
         "name" TEXT,
@@ -26,9 +26,14 @@ def createDb():
         "productId" INTEGER,
         "productPrice" INTEGER,
         "productQuantity" INTEGER,
-        "productPrice" INTEGER,
         PRIMARY KEY("id")
     );
     """)
+    con.commit()
+    con.close()
 
+def checkDb():
+   file = os.path.join("db","pandaDb.db")
+   if not os.path.isfile(file):
+        createDb()
 

@@ -77,6 +77,14 @@ def telaVenderConsultar():
     if opcao == "1":
         input("Você escolheu opção 1 . Consultar hoje ")
         script_sql = ""
+
+        print("Cabecalho")
+        print("Pedido numero : 001")
+        print("Data : 01/01/2026")
+        print("Valor total : 200,00\n")
+        print("Detalhe: ")
+        print("Codigo produto   |   Quantidade   |   Preco unittario | Preco total ")
+        input("continue ...")
     # Parte 2 : Consultar por data escolhida
     elif opcao == "2":
         input("Você escolheu opção 2 . Consultar por data ")

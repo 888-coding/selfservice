@@ -1,4 +1,6 @@
 import os
+from services import services_produtos
+
 def telaProdutos():
     while True:
         os.system("clear")
@@ -87,6 +89,9 @@ def consultar_produtos():
             print("Codigo      Produto          Valor")
             print("001         YAKISSOBA        29,90")
             input("Digite algo para continuar ..")
+            dados = services_produtos.procurar_todos_produtos()
+            for dado in dados :
+                print(dado)
             break
 
 def alterar_nome_produto():

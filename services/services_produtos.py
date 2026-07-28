@@ -2,12 +2,11 @@ import os
 import sqlite3
 from db.get_connection import conectar
 
-def procurar_codigo_produto():
+def procurar_todos_produtos():
     con = conectar()
     cur = con.cursor()
-    sql = "SELECT * FROM produtos"
-    cur.execute(sql,)
+    sql = "SELECT * FROM produtos ORDER BY name "
+    dados = cur.execute(sql,)
     con.close()
-
-procurar_codigo_produto()
+    return dados
 

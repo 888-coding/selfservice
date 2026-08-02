@@ -1,5 +1,5 @@
 import os
-from services import services_produtos
+from services.services_produtos import procurar_todos_produtos
 
 def telaProdutos():
     while True:
@@ -89,7 +89,7 @@ def consultar_produtos():
             print("Codigo      Produto          Valor")
             print("001         YAKISSOBA        29,90")
             input("Digite algo para continuar ..")
-            dados = services_produtos.procurar_todos_produtos()
+            dados = procurar_todos_produtos()
             for dado in dados :
                 print(dado)
             break

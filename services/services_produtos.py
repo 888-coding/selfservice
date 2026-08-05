@@ -9,4 +9,3 @@ def procurar_todos_produtos():
     dados = cur.execute(sql)
     con.close()
     return dados
-

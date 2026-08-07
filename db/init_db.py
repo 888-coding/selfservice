@@ -6,6 +6,7 @@ def createDb():
     con.executescript("""
     CREATE TABLE IF NOT EXISTS "products" (
         "id" INTEGER NOT NULL,
+        "code" TEXT,
         "name" TEXT,
         "price" INTEGER,
         "active" BOOLEAN,

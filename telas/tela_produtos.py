@@ -1,5 +1,6 @@
 import os
 from services.services_produtos import procurar_todos_produtos
+from services.services_produtos import adicionar_produto
 
 def telaProdutos():
     while True:
@@ -78,7 +79,10 @@ def cadastrar_produto():
 
         print(f"CODIGO : {codigo_produto} - NOME: {nome_produto} - PREÇO : {preco_produto}")
         input("Digite enter para continuar ...")
+        dados = [codigo_produto, nome_produto, preco_produto]
+        adicionar_produto(dados)
         break
+
 
 
 def consultar_produtos():
@@ -90,8 +94,12 @@ def consultar_produtos():
             print("001         YAKISSOBA        29,90")
             input("Digite algo para continuar ..")
             dados = procurar_todos_produtos()
-            for dado in dados :
-                print(dado)
+            if dados is None:
+                input("Nao tem dados")
+            else:
+                for dado in dados :
+                    print(dado)
+                    input("Continue ...")
             break
 
 def alterar_nome_produto():

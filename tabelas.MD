@@ -3,7 +3,8 @@
 
 # products
 
-id 
+id
+code
 name
 price
 active

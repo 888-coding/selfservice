@@ -12,5 +12,19 @@ def procurar_todos_produtos():
             cur.close()
 
 def adicionar_produto(dados):
-    pass
+    codigo = dados()
+    nome = dados()
+    preco = dados()
+    ativo = True
 
+    with connection() as con :
+        cur = con.cursor()
+        try:
+            script = """
+                INSERT INTO products VALUES (
+                    code = ?, name = ?, price = ? , active = ?
+                    )"""
+            cur.execute(script, (codigo, nome, preco, ativo) )
+            con.commit()
+        finally:
+            cur.close()

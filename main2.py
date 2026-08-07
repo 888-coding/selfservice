@@ -4,11 +4,6 @@ import telas.tela_produtos as tela_produtos
 import telas.tela_vender as tela_vender
 
 def main():
-  con = conexao()
-  cur = con.cursor()
-  sql = "SELECT * FROM products WHERE id = ? "
-  cur.execute(sql, (1,))
-  cur.close()
-  con.close()
-
+  tela_principal.telaPrincipal()
+  
 main()

@@ -1,4 +1,5 @@
 import os
+import time
 from services.services_produtos import procurar_todos_produtos
 from services.services_produtos import adicionar_produto
 
@@ -81,6 +82,9 @@ def cadastrar_produto():
         input("Digite enter para continuar ...")
         dados = [codigo_produto, nome_produto, preco_produto]
         adicionar_produto(dados)
+
+        print("\nAdicionado com sucesso")
+        time.sleep(3)
         break
 
 

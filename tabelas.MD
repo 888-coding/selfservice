@@ -1,5 +1,9 @@
 # Tabelas de Banco de dados
 
+APLICATIVOS PARA BANCO DE DADOS NO WSL2
+- BEKEEPER 
+- TABLEPLUS 
+
 
 # products
 

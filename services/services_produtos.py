@@ -15,12 +15,13 @@ def procurar_todos_produtos():
         return dados
 def procurar_codigo(dado):
     codigo_a_procura = dado
+    founded = False
     with connection() as con :
         cur = con.cursor()
         try:
-            script = "SELECT * FROM products WHERE code = ? "
-            cur.execute(script, (codigo_a_procura,) )
-            dados = cur.fetchall()
+            script = "SELECT id, code, name FROM products WHERE code = ?"
+            cur.execute(script, (codigo_a_procura,))
+            dados = cur.fetchone()
             if dados:
                 founded = True
             else:

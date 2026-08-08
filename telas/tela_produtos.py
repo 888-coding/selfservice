@@ -2,6 +2,7 @@ import os
 import time
 from services.services_produtos import procurar_todos_produtos
 from services.services_produtos import adicionar_produto
+from services.services_produtos import procurar_codigo
 
 def telaProdutos():
     while True:
@@ -114,11 +115,15 @@ def alterar_nome_produto():
         input_codigo = input('Digite o codigo para procurar : ')
 
         # Aqui precisa procurar codigo
-        pesquisa = True
-        codigo = '01'
-        nome_inicial = 'Pablo'
-        valor = 100
-        if pesquisa :
+        print(f"Você está procurando o codigo : {input_codigo}")
+        dados, founded = procurar_codigo(input_codigo)
+
+        print(f"Imprimindo variavel founde : {founded}")
+        if founded :
+            id = dados[0]
+            codigo = dados[1]
+            nome_inicial = dados[2]
+
             print("\nFoi encontrado o codigo")
             print(f"Codigo: {codigo}")
             print(f"Nome: {nome_inicial}\n\n")

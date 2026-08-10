@@ -1,4 +1,5 @@
 import os
+from re import X
 import sqlite3
 import time
 from db.get_connection import conectar as connection
@@ -63,7 +64,22 @@ def alterar_produto_nome(id, nome_alterado):
             script = "UPDATE products SET name = ? WHERE id = ?"
             cur.execute(script, (nome_alterado, id) )
             con.commit() 
-            print(cur.rowcount , "dodo(s) atualizado")
+            print(cur.rowcount , "dado(s) atualizado")
         finally:
             cur.close()
+
+def alterar_produto_preco(id, preco):
+    id = int(id)
+    preco = preco
+    with connection() as con : 
+        cur = con.cursor()
+        try:
+            script = "UPDATE products SET price = ? WHERE id = ?"
+            cur.execute(script, (preco, id,) )
+            con.commit()
+            print(cur.rowcount, "dado(s) atualizado")
+        finally:
+            cur.close()
+
+
 

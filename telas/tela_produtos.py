@@ -1,6 +1,6 @@
 import os
 import time
-from services.services_produtos import alterar_produto_nome, procurar_todos_produtos
+from services.services_produtos import alterar_produto_nome, procurar_todos_produtos, alterar_produto_preco
 from services.services_produtos import adicionar_produto
 from services.services_produtos import procurar_codigo
 
@@ -155,15 +155,21 @@ def alterar_preco_produto():
         input_codigo = input("Codigo do produto : (zero para sair)")
 
         # Aqui vai procurar o codigo se existe
-        
-        pesquisa = True
+        dados , founded = procurar_codigo(input_codigo) 
+        id = dados[0]
+        founded = True
         if input_codigo == '0':
             break
         else:
             # Se existe aqui
-            if pesquisa :
+            if founded :
                 input("Achamos o codigo , cotinue com enter ..")
-                # Inativar o codigo de produto
+                preco_novo = input("Digite o valor novo : ")
+                # Alterar o preco do produto aqui
+                alterar_produto_preco(id, preco_novo)
+                print("Atualizado com sucesso ...")
+                time.sleep(2)
+
                 break
             # Se não existe aqui
             else:

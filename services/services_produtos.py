@@ -53,30 +53,17 @@ def adicionar_produto(dados):
         finally:
             cur.close()
 
-def alterar_produto_nome(dado):
-    codigo = dado
-    founded = False
+def alterar_produto_nome(id, nome_alterado):
+    id = id 
+    nome_alterado = nome_alterado
 
     with connection() as con :
         cur = con.cursor()
         try:
-            script = "SELECT id, code, name FROM products WHERE code = ? "
-            cur.execute(script, (codigo) )
-            dados = cur.fetchall()
-            if dados :
-                founded = True
+            script = "UPDATE products SET name = ? WHERE id = ?"
+            cur.execute(script, (nome_alterado, id) )
+            con.commit() 
+            print(cur.rowcount , "dodo(s) atualizado")
         finally:
             cur.close()
-
-        if founded : 
-            print("Codigo encontrado ... ")
-            time.sleep(3)
-            for dados in dados :
-                print(dado)
-                time.sleep(1)
-        else:
-            print("Codigo nao foi encontrado ... \n Retornaremos para pagina anterior")
-            time.sleep(4)
-            
-
 

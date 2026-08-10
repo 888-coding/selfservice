@@ -1,6 +1,6 @@
 import os
 import time
-from services.services_produtos import procurar_todos_produtos
+from services.services_produtos import alterar_produto_nome, procurar_todos_produtos
 from services.services_produtos import adicionar_produto
 from services.services_produtos import procurar_codigo
 
@@ -118,7 +118,6 @@ def alterar_nome_produto():
         print(f"Você está procurando o codigo : {input_codigo}")
         dados, founded = procurar_codigo(input_codigo)
 
-        print(f"Imprimindo variavel founde : {founded}")
         if founded :
             id = dados[0]
             codigo = dados[1]
@@ -139,6 +138,9 @@ def alterar_nome_produto():
             print(f"Nome alterado : {nome_alterado} ")
 
             # Aqui atualizar o nome no BD
+            resultado = alterar_produto_nome(id, nome_alterado)
+            print("Atualizado ! ...")
+            time.sleep(2)
         else:
             print('Nao foi encontrado valor')
             input('Digite algo para continuar ...')
@@ -153,7 +155,7 @@ def alterar_preco_produto():
         input_codigo = input("Codigo do produto : (zero para sair)")
 
         # Aqui vai procurar o codigo se existe
-
+        
         pesquisa = True
         if input_codigo == '0':
             break

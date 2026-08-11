@@ -1,6 +1,6 @@
 import os
 import time
-from services.services_produtos import alterar_produto_nome, procurar_todos_produtos, alterar_produto_preco
+from services.services_produtos import alterar_produto_nome, procurar_todos_produtos, alterar_produto_preco, inativar_produto
 from services.services_produtos import adicionar_produto
 from services.services_produtos import procurar_codigo
 
@@ -182,21 +182,21 @@ def tela_inativar_produto():
         print("----------------")
         input_codigo = input("Digite o codigo para inativar (zero para sair) :  ")
 
-        pesquisa = True
-
-        # Aqui precisa procurar o codigo
-
         if input_codigo == "0":
             break
         else:
-            if pesquisa :
+            # Aqui procura o codigo produto
+            dados, founded  = procurar_codigo(input_codigo)
+            if founded :
                 # Aqui Achou o produto
                 os.system("clear")
                 print(f"Codigo do produto : {input_codigo}")
                 print("--------------------------------")
                 input("Codigo achado ! ")
+                print(dados)
 
-                pass
             else:
                 # Aqui não achou o produto
-                pass
+                print("Não foi encontrado !")
+                print("Retornando ... ")
+                time.sleep(3)

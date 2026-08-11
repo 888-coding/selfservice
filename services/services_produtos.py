@@ -81,5 +81,7 @@ def alterar_produto_preco(id, preco):
         finally:
             cur.close()
 
+def inativar_produto(id):
+    id = id
 
 

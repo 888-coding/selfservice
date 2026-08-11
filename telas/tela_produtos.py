@@ -16,13 +16,13 @@ def telaProdutos():
         print("0. Voltar")
         opcao = input("> Opção : ")
         if opcao == "1":
-            cadastrar_produto()
+            tela_cadastrar_produto()
         elif opcao == "2":
-            consultar_produtos()
+            tela_consultar_produtos()
         elif opcao == "3":
             telaAlterarProduto()
         elif opcao == "4":
-            inativar_produto()
+            tela_inativar_produto()
         elif opcao == "0":
             break
         else:
@@ -40,16 +40,16 @@ def telaAlterarProduto():
         opcao = input("Opção : ")
 
         if opcao == "1":
-            alterar_nome_produto()
+            tela_alterar_nome_produto()
         elif opcao == "2":
-            alterar_preco_produto()
+            tela_alterar_preco_produto()
         elif opcao == "0":
             break
         else:
             input("Digite uma opcao correta!")
 
 
-def cadastrar_produto():
+def tela_cadastrar_produto():
     while True:
         os.system("clear")
         print("CADASTRO - PRODUTO")
@@ -90,7 +90,7 @@ def cadastrar_produto():
 
 
 
-def consultar_produtos():
+def tela_consultar_produtos():
         while True:
             os.system("clear")
             print("Consulta de produtos")
@@ -107,7 +107,7 @@ def consultar_produtos():
                     input("Continue ...")
             break
 
-def alterar_nome_produto():
+def tela_alterar_nome_produto():
     while True:
         os.system("clear")
         print('Alterar Nome do produto')
@@ -147,7 +147,7 @@ def alterar_nome_produto():
             break
         break
 
-def alterar_preco_produto():
+def tela_alterar_preco_produto():
     while True:
         os.system("clear")
         print("ALTERAR PREÇO DO PRODUTO")
@@ -175,7 +175,7 @@ def alterar_preco_produto():
             else:
                 input("Não foi encontrado ... \n")
 
-def inativar_produto():
+def tela_inativar_produto():
     while True:
         os.system("clear")
         print("INATIVAR PRODUTO")

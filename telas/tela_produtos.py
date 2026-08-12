@@ -1,6 +1,6 @@
 import os
 import time
-from services.services_produtos import alterar_produto_nome, procurar_todos_produtos, alterar_produto_preco, inativar_produto
+from services.services_produtos import alterar_produto_nome, procurar_todos_produtos, alterar_produto_preco, inativar_produto, reativar_produto_listarProdutosInativos, reativar_produto_inativar
 from services.services_produtos import adicionar_produto
 from services.services_produtos import procurar_codigo
 
@@ -13,6 +13,7 @@ def telaProdutos():
         print("2. Consultar")
         print("3. Alterar")
         print("4. Inativar")
+        print("5. Reativar")
         print("0. Voltar")
         opcao = input("> Opção : ")
         if opcao == "1":
@@ -23,6 +24,8 @@ def telaProdutos():
             telaAlterarProduto()
         elif opcao == "4":
             tela_inativar_produto()
+        elif opcao == "5":
+            tela_reativar_produto()
         elif opcao == "0":
             break
         else:
@@ -95,16 +98,13 @@ def tela_consultar_produtos():
             os.system("clear")
             print("Consulta de produtos")
             print("--------------------")
-            print("Codigo      Produto          Valor")
-            print("001         YAKISSOBA        29,90")
-            input("Digite algo para continuar ..")
             dados = procurar_todos_produtos()
             if dados is None:
                 input("Nao tem dados")
             else:
                 for dado in dados :
                     print(dado)
-                    input("Continue ...")
+            input("Fim da lista")
             break
 
 def tela_alterar_nome_produto():
@@ -204,3 +204,29 @@ def tela_inativar_produto():
                 print("Não foi encontrado !")
                 print("Retornando ... ")
                 time.sleep(3)
+
+def tela_reativar_produto():
+    os.system("clear")
+    print("Reativar produto")
+    print("----------------")
+    print("> Lista dos inativos")
+    dados = reativar_produto_listarProdutosInativos()
+    
+    if dados:
+        for dado in dados :
+            print(dado)
+    else:
+        print("Não tem produtos inativos")
+    
+    input("\n\n > Fim da lista")
+    opcao = input("Deseja ativar algum produto ? (s/n)").upper()
+    if opcao = "N":
+        print("Voltanado ao menu ..")
+        time.sleep(2)
+        break
+    else:
+        print("Voce escolher inativar ? ")
+        time.sleep(1)
+        codigo = input("\nQual o codigo do produto : ")
+        resultado = reativar_produto_inativar(codigo) 
+    

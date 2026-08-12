@@ -1,6 +1,3 @@
-import os
-import sqlite3
-import time
 from db.get_connection import conectar as connection
 
 def procurar_todos_produtos():
@@ -92,3 +89,26 @@ def inativar_produto(id):
         finally:
             cur.close()
 
+def reativar_produto_listarProdutosInativos():
+    dados = []
+    with connection() as con:
+        cur = con.cursor()
+        try:
+            script = "SELECT * FROM products WHERE active = ? "
+            cur.execute(script, (0,) )
+            dados = cur.fetchall()
+        finally:
+            cur.close()
+    return dados
+
+def reativar_produto_inativar(codigo):
+    codigo = codigo
+    with connection() as con : 
+        cur = con.cursor()
+        try:
+            script = "SELECT id, code, nome FROM products WHERE code = ? "
+            cur.execute(script)
+            pass
+        finally:
+            cur.close() 
+    pass

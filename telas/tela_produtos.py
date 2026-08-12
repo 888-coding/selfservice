@@ -189,11 +189,15 @@ def tela_inativar_produto():
             dados, founded  = procurar_codigo(input_codigo)
             if founded :
                 # Aqui Achou o produto
+                id = dados[0]
                 os.system("clear")
                 print(f"Codigo do produto : {input_codigo}")
                 print("--------------------------------")
                 input("Codigo achado ! ")
                 print(dados)
+                print("\nInativando ..")
+                time.sleep(3)
+                inativar_produto(id)
 
             else:
                 # Aqui não achou o produto

@@ -1,5 +1,4 @@
 import os
-from re import X
 import sqlite3
 import time
 from db.get_connection import conectar as connection
@@ -83,5 +82,13 @@ def alterar_produto_preco(id, preco):
 
 def inativar_produto(id):
     id = id
-
+    with connection() as con:
+        cur = con.cursor()
+        try:
+            script = "UPDATE products SET active = False WHERE id = ? "
+            cur.execute(script, (id,) )
+            con.commit()
+            print(cur.rowcount, "dado(s) atualizado")
+        finally:
+            cur.close()
 

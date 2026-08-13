@@ -220,13 +220,23 @@ def tela_reativar_produto():
     
     input("\n\n > Fim da lista")
     opcao = input("Deseja ativar algum produto ? (s/n)").upper()
-    if opcao = "N":
+    if opcao == "N":
         print("Voltanado ao menu ..")
         time.sleep(2)
-        break
     else:
-        print("Voce escolher inativar ? ")
-        time.sleep(1)
+        print("> Inativar qual codigo")
+        time.sleep(0.5)
         codigo = input("\nQual o codigo do produto : ")
-        resultado = reativar_produto_inativar(codigo) 
+        
+        dado, founded = procurar_codigo(codigo) 
+        
+        id = dado[0]
+        codigo = dado[1]
+        nome = dado[2]
+
+        print(f"Codigo : {codigo} - Nome: {nome}")
+        reativar_produto_inativar(id)
+
+        print(f"\nReativado o codigo {codigo}")
+        input("\n> Continue ...")
     

@@ -101,14 +101,14 @@ def reativar_produto_listarProdutosInativos():
             cur.close()
     return dados
 
-def reativar_produto_inativar(codigo):
-    codigo = codigo
+def reativar_produto_inativar(id):
+    id = id
     with connection() as con : 
         cur = con.cursor()
         try:
-            script = "SELECT id, code, nome FROM products WHERE code = ? "
-            cur.execute(script)
+            script = "UPDATE products SET active = True WHERE id = ? " 
+            cur.execute(script, (id,))
+            con.commit()
             pass
         finally:
             cur.close() 
-    pass

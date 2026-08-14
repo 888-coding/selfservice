@@ -48,7 +48,11 @@ def telaVenderCadastrar():
                 print("ERRO : Codigo nao valido!")
         
         input_qte_produto = input("Quantidade : ")
-        lista_produtos.append((input_codigo_produto, input_qte_produto))
+        lista_produtos.append((
+            id,
+            input_codigo_produto, 
+            nome,
+            input_qte_produto))
         while True:
             desejaContinuar = input("Deseja adicionar mais (s/n) ? : ").upper()
             if desejaContinuar in ("S", "N"):
@@ -61,7 +65,7 @@ def telaVenderCadastrar():
             # Continua para proximo passo 
     print("Pedido feito ! ")
     print(f"Data : {input_data}")
-    for codigo, quantidade in lista_produtos:
+    for id, codigo, nome, quantidade in lista_produtos:
         print(f"Codigo do produto {codigo} | Quantidade : {quantidade} ")
     input("guardando dados ...")
     time.sleep(3)

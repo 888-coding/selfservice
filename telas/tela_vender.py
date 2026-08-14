@@ -36,14 +36,17 @@ def telaVenderCadastrar():
 
     lista_produtos = []
     while True:
-        input_codigo_produto = input("Codigo do produto : ")
-        dados , founded = procurar_codigo(input_codigo_produto)
-        if founded :
-            id = dados[0]
-            nome = dados[2]
-            print(f"Codigo achado : {input_codigo_produto} - {nome}")
-        else:
-            print("ERRO : Codigo nao valido!")
+        while True:
+            input_codigo_produto = input("Codigo do produto : ")
+            dados , founded = procurar_codigo(input_codigo_produto)
+            if founded :
+                id = dados[0]
+                nome = dados[2]
+                print(f"Codigo achado : {input_codigo_produto} - {nome}")
+                break
+            else:
+                print("ERRO : Codigo nao valido!")
+        
         input_qte_produto = input("Quantidade : ")
         lista_produtos.append((input_codigo_produto, input_qte_produto))
         while True:

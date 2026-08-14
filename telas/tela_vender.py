@@ -48,7 +48,7 @@ def telaVenderCadastrar():
             break
             # Se nao deseja adicionar mais, 
             # Continua para proximo passo 
-    print("Pedido feito : ")
+    print("Pedido feito ! ")
     print(f"Data : {input_data}")
     for codigo, quantidade in lista_produtos:
         print(f"Codigo do produto {codigo} | Quantidade : {quantidade} ")

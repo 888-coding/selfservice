@@ -1,6 +1,7 @@
 import os
 import time
 from services.services_produtos import procurar_codigo
+from services.services_vender import service_venderCadastro
 
 def telaVender():
     while True:
@@ -63,15 +64,22 @@ def telaVenderCadastrar():
             break
             # Se nao deseja adicionar mais, 
             # Continua para proximo passo 
-    print("Pedido feito ! ")
     print(f"Data : {input_data}")
     for id, codigo, nome, quantidade in lista_produtos:
-        print(f"Codigo do produto {codigo} | Quantidade : {quantidade} ")
+        print(f"Codigo do produto {codigo} |  {nome}  | Quantidade : {quantidade} ")
     input("guardando dados ...")
-    time.sleep(3)
+    
+    # TODO iniciar gravação 
+    # Enviar lista cabecalho, lista produtos 
+
+    lista_cabecalho = []
+    
+    # Cabecalho : Data 
+    lista_cabecalho.append(input_data)
+   
+    resultado = service_venderCadastro(lista_cabecalho, lista_produtos) 
     input("... gravado !  ")
 
-    # TODO : Aqui vai ser gravado dados para banco de dados 
 
 def telaVenderConsultar():
     os.system("clear")

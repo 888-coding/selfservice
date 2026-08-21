@@ -37,9 +37,9 @@ def service_venderCadastro(cabecalho, produtos):
                 ) VALUES(?, ?, ?, ?)
             """
             for produto in produtos :
-                productId = xx
-                productPrice = xx
-                productQuantity = xx
+                productId = produto[0]
+                productPrice = produto[4]
+                productQuantity = produto[3]
                 cur.execute(script, (id_selling, productId, productPrice, productQuantity,) ) 
                 con.commit() 
 

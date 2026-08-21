@@ -16,7 +16,7 @@ def procurar_codigo(dado):
     with connection() as con :
         cur = con.cursor()
         try:
-            script = "SELECT id, code, name FROM products WHERE code = ?"
+            script = "SELECT id, code, name, price FROM products WHERE code = ?"
             cur.execute(script, (codigo_a_procura,))
             dados = cur.fetchone()
             if dados:

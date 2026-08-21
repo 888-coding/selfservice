@@ -43,7 +43,8 @@ def telaVenderCadastrar():
             if founded :
                 id = dados[0]
                 nome = dados[2]
-                print(f"Codigo achado : {input_codigo_produto} - {nome}")
+                preco = dados[3]
+                print(f"Codigo achado : {input_codigo_produto} - {nome} - Preço : {preco}")
                 break
             else:
                 print("ERRO : Codigo nao valido!")
@@ -53,7 +54,8 @@ def telaVenderCadastrar():
             id,
             input_codigo_produto, 
             nome,
-            input_qte_produto))
+            input_qte_produto, 
+            preco))
         while True:
             desejaContinuar = input("Deseja adicionar mais (s/n) ? : ").upper()
             if desejaContinuar in ("S", "N"):
@@ -65,8 +67,8 @@ def telaVenderCadastrar():
             # Se nao deseja adicionar mais, 
             # Continua para proximo passo 
     print(f"Data : {input_data}")
-    for id, codigo, nome, quantidade in lista_produtos:
-        print(f"Codigo do produto {codigo} |  {nome}  | Quantidade : {quantidade} ")
+    for id, codigo, nome, quantidade, preco in lista_produtos:
+        print(f"Codigo do produto {codigo} |  {nome}  | Quantidade : {quantidade} | Preço : {preco}")
     input("guardando dados ...")
     
     # TODO iniciar gravação 

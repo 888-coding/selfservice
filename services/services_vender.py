@@ -43,10 +43,19 @@ def service_venderCadastro(cabecalho, produtos):
                 cur.execute(script, (id_selling, productId, productPrice, productQuantity,) ) 
                 con.commit() 
 
+            # Passo 3 : Atualizar a tabela Selling 
+            # Precisa atualizar o valor total 
+
+            script = """UPDATE selling
+                SET totalValue = ? 
+                WHERE sellingId = ? 
+            """
+            # TODO: Continuar aqui com o update
+
+
         finally:
             cur.close()
 
-    # Passo 2 Inserir produtos na tabela de selling sellingDetails
     print(f"Id de selling criado é {id_selling} ")
     
 # ??

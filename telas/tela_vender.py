@@ -90,35 +90,34 @@ def telaVenderConsultar():
     print("1. Hoje")
     print("2. Por data")
     print("3. Por codigo")
+    print("0. Sair")
     while True:
         opcao = input("\n> Opção: ")
 
-        if opcao in ("1", "2", "3"):
-            break
+        if opcao == "1":
+            input("Você escolheu opção 1 . Consultar hoje ")
+            script_sql = ""
+
+            print("Cabecalho")
+            print("Pedido numero : 001")
+            print("Data : 01/01/2026")
+            print("Valor total : 200,00\n")
+            print("Detalhe: ")
+            print("Codigo produto   |   Quantidade   |   Preco unittario | Preco total ")
+            input("continue ...")
+        # Parte 2 : Consultar por data escolhida
+        elif opcao == "2":
+            input("Você escolheu opção 2 . Consultar por data ")
+            script_sql = ""
+        # Parte 3 : Consultar por codigo de pedido
+        elif opcao == "3":
+            input("Você escolheu opção 3 . Consultar por codigo de pedido ")
+            script_sql = ""
+        elif opcao == "0":
+            break 
         else:
-            input("Opção inválida! .. Enter para continuar")
+            input("Opcao invalida ! Favor corrigir")
 
-    # Parte 1 : Consultar por hoje 
-    if opcao == "1":
-        input("Você escolheu opção 1 . Consultar hoje ")
-        script_sql = ""
-
-        print("Cabecalho")
-        print("Pedido numero : 001")
-        print("Data : 01/01/2026")
-        print("Valor total : 200,00\n")
-        print("Detalhe: ")
-        print("Codigo produto   |   Quantidade   |   Preco unittario | Preco total ")
-        input("continue ...")
-    # Parte 2 : Consultar por data escolhida
-    elif opcao == "2":
-        input("Você escolheu opção 2 . Consultar por data ")
-        script_sql = ""
-    # Parte 3 : Consultar por codigo de pedido
-    elif opcao == "3":
-        input("Você escolheu opção 3 . Consultar por codigo de pedido ")
-        script_sql = ""
-
-    # TODO: Aqui vai inserir o comando script para procurar pedido
+        # TODO: Aqui vai inserir o comando script para procurar pedido
 
 

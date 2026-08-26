@@ -36,22 +36,25 @@ def service_venderCadastro(cabecalho, produtos):
                 productQuantity
                 ) VALUES(?, ?, ?, ?)
             """
+            valor_total = 0 
             for produto in produtos :
                 productId = produto[0]
                 productPrice = produto[4]
                 productQuantity = produto[3]
                 cur.execute(script, (id_selling, productId, productPrice, productQuantity,) ) 
                 con.commit() 
+                valor_total += int(productPrice) * int(productQuantity)
 
             # Passo 3 : Atualizar a tabela Selling 
             # Precisa atualizar o valor total 
 
             script = """UPDATE selling
                 SET totalValue = ? 
-                WHERE sellingId = ? 
+                WHERE id = ? 
             """
             # TODO: Continuar aqui com o update
-
+            cur.execute(script, (valor_total,id_selling,) )
+            con.commit()
 
         finally:
             cur.close()

@@ -52,7 +52,6 @@ def service_venderCadastro(cabecalho, produtos):
                 SET totalValue = ? 
                 WHERE id = ? 
             """
-            # TODO: Continuar aqui com o update
             cur.execute(script, (valor_total,id_selling,) )
             con.commit()
 

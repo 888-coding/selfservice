@@ -80,7 +80,8 @@ def telaVenderCadastrar():
     lista_cabecalho.append(input_data)
    
     resultado = service_venderCadastro(lista_cabecalho, lista_produtos) 
-    input("... gravado !  ")
+    if resultado:
+        input("Cadastrado o pedido! Continue ...")
 
 
 def telaVenderConsultar():

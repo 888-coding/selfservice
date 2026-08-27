@@ -59,17 +59,7 @@ def service_venderCadastro(cabecalho, produtos):
             cur.close()
 
     print(f"Id de selling criado é {id_selling} ")
-    
-# ??
-def service_venderAdicionarCabecalho():
-    pass
+
+    return True
 
 
-# ??
-def service_venderAdicionarProdutos():
-    pass
-
-
-# ??
-def service_venderAtualizarCabecalho():
-    pass

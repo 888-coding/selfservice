@@ -59,7 +59,9 @@ def service_venderCadastro(cabecalho, produtos):
             cur.close()
 
     print(f"Id de selling criado é {id_selling} ")
-
-    return True
+    retorno = []
+    retorno.append(True)
+    retorno.append(id_selling)
+    return retorno 
 
 

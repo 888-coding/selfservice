@@ -33,9 +33,28 @@ def telaVenderCadastrar():
     os.system("clear")
     print("Vendas - Cadastro")
     print("-----------------")
-    dia = input("Dia do pedido : ")
-    mes = input("Mês do pedido : ")
-    ano = input("Ano do pedido : ")
+    while True:
+        dia = input("Dia : ")
+        if dia.isnumeric():
+            break
+        else:
+            print("Erro na data!")
+            time.sleep(1.5)
+    while True:
+        mes = input("Mês : ")
+        if mes.isnumeric():
+            break
+        else:
+            print("Erro na data !")
+            time.sleep(1.5)
+    while True:
+        ano = input("Ano : ")
+        if ano.isnumeric():
+            break
+        else:
+            print("Erro na data ! ")
+            time.sleep(1.5)
+
     input_data = ano + "-" + mes + "-" + dia
 
     lista_produtos = []

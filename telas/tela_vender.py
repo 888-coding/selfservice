@@ -33,7 +33,10 @@ def telaVenderCadastrar():
     os.system("clear")
     print("Vendas - Cadastro")
     print("-----------------")
-    input_data = input("Data do pedido : ")
+    dia = input("Dia do pedido : ")
+    mes = input("Mês do pedido : ")
+    ano = input("Ano do pedido : ")
+    input_data = ano + "-" + mes + "-" + dia
 
     lista_produtos = []
     while True:

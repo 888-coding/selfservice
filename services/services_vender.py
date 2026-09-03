@@ -1,5 +1,5 @@
 from db.get_connection import conectar as connection
-
+import os
 
 
 
@@ -58,7 +58,11 @@ def service_venderCadastro(cabecalho, produtos):
         finally:
             cur.close()
 
-    print(f"Id de selling criado é {id_selling} ")
+    os.system("clear")
+    print(f"Número do pedido :  {id_selling} ")
+    print(f"Data do pedido : {date}")
+    for produto in produtos:
+        print(f"{produto}")
     retorno = []
     retorno.append(True)
     retorno.append(id_selling)

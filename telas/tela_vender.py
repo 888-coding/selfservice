@@ -57,6 +57,7 @@ def telaVenderCadastrar():
 
     input_data = ano + "-" + mes + "-" + dia
 
+    print(f"\nData Preenchida : {input_data}\n\n")
     lista_produtos = []
     while True:
         while True:

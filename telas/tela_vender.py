@@ -104,9 +104,8 @@ def telaVenderCadastrar():
    
     resultado, id_selling = service_venderCadastro(lista_cabecalho, lista_produtos) 
     if resultado:
-        input("Cadastrado o pedido! Continue ...")
         print(f"Codigo gravado é : {id_selling}")
-
+        input("Cadastrado o pedido! Continue ...")
 
 def telaVenderConsultar():
     os.system("clear")

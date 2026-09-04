@@ -1,5 +1,6 @@
 from db.get_connection import conectar as connection
 import os
+import time
 
 
 
@@ -55,14 +56,23 @@ def service_venderCadastro(cabecalho, produtos):
             cur.execute(script, (valor_total,id_selling,) )
             con.commit()
 
+
         finally:
             cur.close()
 
     os.system("clear")
-    print(f"Número do pedido :  {id_selling} ")
-    print(f"Data do pedido : {date}")
+    time.sleep(0.8)
+    print(f"Número do pedido :  {id_selling}")
+    time.sleep(0.5)
+    print(f"\n\nData do pedido : {date}")
+    time.sleep(0.5)
     for produto in produtos:
-        print(f"{produto}")
+        nome = produto[2]
+        qte = produto[3]
+        preco = produto[4]
+
+        time.sleep(0.5)
+        print(f"\nProduto : {nome} , Quantidade : {qte} , Preço : {preco}")
     retorno = []
     retorno.append(True)
     retorno.append(id_selling)

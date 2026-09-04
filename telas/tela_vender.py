@@ -92,7 +92,8 @@ def telaVenderCadastrar():
     print(f"Data : {input_data}")
     for id, codigo, nome, quantidade, preco in lista_produtos:
         print(f"Codigo do produto {codigo} |  {nome}  | Quantidade : {quantidade} | Preço : {preco}")
-    input("guardando dados ...")
+    print("guardando dados ...")
+    time.sleep(1.5)
     
     # TODO iniciar gravação 
     # Enviar lista cabecalho, lista produtos 
@@ -104,8 +105,7 @@ def telaVenderCadastrar():
    
     resultado, id_selling = service_venderCadastro(lista_cabecalho, lista_produtos) 
     if resultado:
-        print(f"Codigo gravado é : {id_selling}")
-        input("Cadastrado o pedido! Continue ...")
+        input("\n\nPedido cadastrado. Continue ...")
 
 def telaVenderConsultar():
     os.system("clear")

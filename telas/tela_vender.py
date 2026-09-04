@@ -56,7 +56,8 @@ def telaVenderCadastrar():
             time.sleep(1.5)
 
     input_data = ano + "-" + mes + "-" + dia
-
+    os.system("clear")
+    print("**Pedido \n--------\n\n")
     print(f"\nData Preenchida : {input_data}\n\n")
     lista_produtos = []
     while True:
@@ -95,17 +96,12 @@ def telaVenderCadastrar():
     print("guardando dados ...")
     time.sleep(1.5)
     
-    # TODO iniciar gravação 
-    # Enviar lista cabecalho, lista produtos 
-
     lista_cabecalho = []
-    
-    # Cabecalho : Data 
     lista_cabecalho.append(input_data)
    
     resultado, id_selling = service_venderCadastro(lista_cabecalho, lista_produtos) 
     if resultado:
-        input("\n\nPedido cadastrado. Continue ...")
+        input(f"\n\nPedido {id_selling} cadastrado. Continue ...")
 
 def telaVenderConsultar():
     os.system("clear")

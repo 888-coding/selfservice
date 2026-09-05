@@ -85,3 +85,4 @@ def service_venderConsulta(data):
     elif data is yesterday:
         pass
     else:
+        pass

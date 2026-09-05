@@ -1,7 +1,7 @@
 import os
 import time
 from services.services_produtos import procurar_codigo
-from services.services_vender import service_venderCadastro
+from services.services_vender import service_venderCadastro, service_venderConsulta
 
 def telaVender():
     while True:
@@ -115,6 +115,11 @@ def telaVenderConsultar():
         opcao = input("\n> Opção: ")
 
         if opcao == "1":
+            t = time.localtime()
+            dia, mes, ano = t.tm_mday, t.tm_mon, t.tm_year
+            hoje = str(ano) + "-" + str(mes) + "-" + str(dia)
+            service_venderConsulta(hoje)
+            
             input("Você escolheu opção 1 . Consultar hoje ")
             script_sql = ""
 

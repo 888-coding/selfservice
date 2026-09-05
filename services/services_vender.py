@@ -79,3 +79,9 @@ def service_venderCadastro(cabecalho, produtos):
     return retorno 
 
 
+def service_venderConsulta(data):
+    if data is today:
+        pass
+    elif data is yesterday:
+        pass
+    else:

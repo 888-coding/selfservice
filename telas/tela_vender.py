@@ -55,7 +55,7 @@ def telaVenderCadastrar():
             print("Erro na data ! ")
             time.sleep(1.5)
 
-    input_data = ano + "-" + mes + "-" + dia
+    input_data = ano + "-" + mes.zfill(2) + "-" + dia.zfill(2)
     os.system("clear")
     print("**Pedido \n--------\n\n")
     print(f"\nData Preenchida : {input_data}\n\n")
@@ -129,12 +129,17 @@ def telaVenderConsultar():
             if dados:
                 for dado in dados :
                     print(f"Pedido numero : {dado[0]}")
+                    time.sleep(0.5)
                     print(f"Desconto :{dado[1]}")
+                    time.sleep(0.5)
                     print(f"Valor total : {dado[2]}")
-                    input("Continue...")
+                    print("\n")
+                    time.sleep(0.5)
             else:
                 print("\n\nNão existe dados hoje !")
-
+                time.sleep(1.5)
+            input("> Pressione enter para continuar ...")
+            break
         # Parte 2 : Consultar por data escolhida
         elif opcao == "2":
             input("Você escolheu opção 2 . Consultar por data ")

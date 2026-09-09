@@ -85,8 +85,6 @@ def service_venderConsulta(data):
     t = time.localtime()
     dia, mes, ano = t.tm_mday, t.tm_mon, t.tm_year
     hoje = f"{ano}-{mes:02d}-{dia:02d}"
-    print("data : ", data)
-    print("str(data)", str(data))
 
     if str(data) == str(hoje):
         # Aqui fica o data de Hoje
@@ -94,17 +92,9 @@ def service_venderConsulta(data):
         with connection() as con :
             cur = con.cursor()
             try:
-                # TODO: Continuar aqui
                 script = "SELECT id, discount, totalValue FROM selling WHERE sellingDate = ?"
                 cur.execute(script, (str(data),) )
                 dados = cur.fetchall()
-                input("Hello!, você está dentro de pedido do dia")
-                if dados :
-                    input("Existe dddaaadddooosss ")
-                    for dado in dados :
-                        print(f"numero de id : {dado[0]} ")
-                        print(f"Desconto : {dado[1]} ")
-                        print(f"Valor total : {dado[2]} ")
                 return dados
                 time.sleep(2.0)
             finally:

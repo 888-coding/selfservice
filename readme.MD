@@ -19,6 +19,4 @@ Tela -> Vender -> Consulta
 		          -> Procurar por dia
 			  	-> Procurar por hoje 
 				-> Procurar escolhendo data 
-			  -> Procurar por codigo de pedido 
-
-
+			  -> Procurar por codigo de pedido

@@ -15,7 +15,7 @@ def telaVender():
         print("0. Sair")
 
         input_opcao = input("Opção : ")
-        
+
         if input_opcao  == "1":
             telaVenderCadastrar ()
         elif input_opcao == "2":
@@ -72,13 +72,13 @@ def telaVenderCadastrar():
                 break
             else:
                 print("ERRO : Codigo nao valido!")
-        
+
         input_qte_produto = input("Quantidade : ")
         lista_produtos.append((
             id,
-            input_codigo_produto, 
+            input_codigo_produto,
             nome,
-            input_qte_produto, 
+            input_qte_produto,
             preco))
         while True:
             desejaContinuar = input("Deseja adicionar mais (s/n) ? : ").upper()
@@ -88,18 +88,18 @@ def telaVenderCadastrar():
 
         if desejaContinuar == "N":
             break
-            # Se nao deseja adicionar mais, 
-            # Continua para proximo passo 
+            # Se nao deseja adicionar mais,
+            # Continua para proximo passo
     print(f"Data : {input_data}")
     for id, codigo, nome, quantidade, preco in lista_produtos:
         print(f"Codigo do produto {codigo} |  {nome}  | Quantidade : {quantidade} | Preço : {preco}")
     print("guardando dados ...")
     time.sleep(1.5)
-    
+
     lista_cabecalho = []
     lista_cabecalho.append(input_data)
-   
-    resultado, id_selling = service_venderCadastro(lista_cabecalho, lista_produtos) 
+
+    resultado, id_selling = service_venderCadastro(lista_cabecalho, lista_produtos)
     if resultado:
         input(f"\n\nPedido {id_selling} cadastrado. Continue ...")
 
@@ -117,19 +117,24 @@ def telaVenderConsultar():
         if opcao == "1":
             t = time.localtime()
             dia, mes, ano = t.tm_mday, t.tm_mon, t.tm_year
-            hoje = str(ano) + "-" + str(mes) + "-" + str(dia)
-            service_venderConsulta(hoje)
-            
-            input("Você escolheu opção 1 . Consultar hoje ")
-            script_sql = ""
+            hoje = f"{ano}-{mes:02d}-{dia:02d}"
+            dados = service_venderConsulta(hoje)
+            time.sleep(0.5)
+            print("..consultando")
+            time.sleep(0.5)
+            print("..aguarde ")
+            os.system("clear")
+            print("\n\nPedidos de Hoje")
+            print("===============")
+            if dados:
+                for dado in dados :
+                    print(f"Pedido numero : {dado[0]}")
+                    print(f"Desconto :{dado[1]}")
+                    print(f"Valor total : {dado[2]}")
+                    input("Continue...")
+            else:
+                print("\n\nNão existe dados hoje !")
 
-            print("Cabecalho")
-            print("Pedido numero : 001")
-            print("Data : 01/01/2026")
-            print("Valor total : 200,00\n")
-            print("Detalhe: ")
-            print("Codigo produto   |   Quantidade   |   Preco unittario | Preco total ")
-            input("continue ...")
         # Parte 2 : Consultar por data escolhida
         elif opcao == "2":
             input("Você escolheu opção 2 . Consultar por data ")
@@ -139,10 +144,8 @@ def telaVenderConsultar():
             input("Você escolheu opção 3 . Consultar por codigo de pedido ")
             script_sql = ""
         elif opcao == "0":
-            break 
+            break
         else:
             input("Opcao invalida ! Favor corrigir")
 
         # TODO: Aqui vai inserir o comando script para procurar pedido
-
-

@@ -142,7 +142,35 @@ def telaVenderConsultar():
             break
         # Parte 2 : Consultar por data escolhida
         elif opcao == "2":
-            input("Você escolheu opção 2 . Consultar por data ")
+            print("Você escolheu opção 2 . Consultar por data ")
+            dia = input("Dia: ").zfill(2)
+            mes = input("Mês: ").zfill(2)
+            ano = input("Ano: ")
+
+            data_a_procurar = ano + "-" + mes + "-" + dia
+
+            dados = service_venderConsulta(data_a_procurar)
+            time.sleep(0.5)
+            print("..consultando")
+            time.sleep(0.5)
+            print("..aguarde ")
+            os.system("clear")
+            print("\n\nPedidos de Hoje")
+            print("===============")
+            if dados:
+                for dado in dados :
+                    print(f"Pedido numero : {dado[0]}")
+                    time.sleep(0.5)
+                    print(f"Desconto :{dado[1]}")
+                    time.sleep(0.5)
+                    print(f"Valor total : {dado[2]}")
+                    print("\n")
+                    time.sleep(0.5)
+            else:
+                print("\n\nNão existe dados hoje !")
+                time.sleep(1.5)
+            input("> Pressione enter para continuar ...")
+            break
             script_sql = ""
         # Parte 3 : Consultar por codigo de pedido
         elif opcao == "3":
@@ -153,4 +181,3 @@ def telaVenderConsultar():
         else:
             input("Opcao invalida ! Favor corrigir")
 
-        # TODO: Aqui vai inserir o comando script para procurar pedido

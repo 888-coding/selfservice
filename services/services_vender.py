@@ -1,3 +1,5 @@
+from sqlite3 import connect
+
 from db.get_connection import conectar as connection
 import os
 import time
@@ -100,4 +102,12 @@ def service_venderConsulta(data):
             finally:
                 cur.close()
     else:
-        pass
+        with connection() as con :
+            cur = con.cursor()
+            try :
+                script = "SELECT id, discount, totalValue FROM selling WHERE sellingDate = ?"
+                cur.execute(script, (str(data),) )
+                dados = cur.fetchall()
+                return dados
+            finally :
+                cur.close()

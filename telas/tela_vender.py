@@ -175,7 +175,9 @@ def telaVenderConsultar():
         # Parte 3 : Consultar por codigo de pedido
         elif opcao == "3":
             input("Você escolheu opção 3 . Consultar por codigo de pedido ")
-            script_sql = ""
+            print("Função inativo no momento .. ")
+            time.sleep(3.0)
+            break
         elif opcao == "0":
             break
         else:

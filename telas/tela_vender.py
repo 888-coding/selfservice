@@ -1,7 +1,7 @@
 import os
 import time
 from services.services_produtos import procurar_codigo
-from services.services_vender import service_venderCadastro, service_venderConsulta
+from services.services_vender import service_venderCadastro, service_venderConsulta, service_venderConsultaPorData
 
 def telaVender():
     while True:
@@ -118,7 +118,7 @@ def telaVenderConsultar():
             t = time.localtime()
             dia, mes, ano = t.tm_mday, t.tm_mon, t.tm_year
             hoje = f"{ano}-{mes:02d}-{dia:02d}"
-            dados = service_venderConsulta(hoje)
+            dados = service_venderConsultaPorData(hoje)
             time.sleep(0.5)
             print("..consultando")
             time.sleep(0.5)
@@ -149,7 +149,7 @@ def telaVenderConsultar():
 
             data_a_procurar = ano + "-" + mes + "-" + dia
 
-            dados = service_venderConsulta(data_a_procurar)
+            dados = service_venderConsultaPorData(data_a_procurar)
             time.sleep(0.5)
             print("..consultando")
             time.sleep(0.5)
@@ -182,4 +182,3 @@ def telaVenderConsultar():
             break
         else:
             input("Opcao invalida ! Favor corrigir")
-

@@ -81,7 +81,7 @@ def service_venderCadastro(cabecalho, produtos):
     return retorno
 
 
-def service_venderConsulta(data):
+def service_venderConsultaPorData(data):
     data = data
 
     t = time.localtime()

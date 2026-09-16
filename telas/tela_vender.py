@@ -1,7 +1,7 @@
 import os
 import time
 from services.services_produtos import procurar_codigo
-from services.services_vender import service_venderCadastro, service_venderConsulta, service_venderConsultaPorData
+from services.services_vender import service_venderCadastro, service_venderConsultaPorData
 
 def telaVender():
     while True:

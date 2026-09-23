@@ -1,7 +1,7 @@
 import os
 import time
 from services.services_produtos import procurar_codigo
-from services.services_vender import service_venderCadastro, service_venderConsultaPorData
+from services.services_vender import service_venderCadastro, service_venderConsultaPorData, consultarPorNumeroPedido
 
 def telaVender():
     while True:
@@ -172,11 +172,24 @@ def telaVenderConsultar():
             input("> Pressione enter para continuar ...")
             break
         # Parte 3 : Consultar por codigo de pedido
-        # Não vai funcionar agora
+        #
         elif opcao == "3":
-            input("Você escolheu opção 3 . Consultar por codigo de pedido ")
-            print("Função inativo no momento .. ")
-            time.sleep(3.0)
+            print("Procurar por codigo.")
+            time.sleep(1.0)
+            os.system("clear")
+            time.sleep(1.0)
+            print("Procurar por Numero de pedido")
+            print("-----------------------------")
+            numeroPedido = input("Numero do pedido :  ")
+            dado = consultarPorNumeroPedido(numeroPedido)
+            if dado:
+                print(f"1. {dado[0]}, 2. {dado[1]}, 3. {dado[2]} 4. {dado[3]} ")
+                input("Digite enter para continuar ...")
+            else:
+                time.sleep(1.5)
+                print("Não encontrado !")
+                time.sleep(1.0)
+                input("Digite enter para continuar ...")
             break
         elif opcao == "0":
             break

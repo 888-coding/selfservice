@@ -1,4 +1,4 @@
-from sqlite3 import connect
+from sqlite3 import Cursor, connect
 
 from db.get_connection import conectar as connection
 import os
@@ -111,3 +111,15 @@ def service_venderConsultaPorData(data):
                 return dados
             finally :
                 cur.close()
+
+def consultarPorNumeroPedido(dado):
+   numeroPedido = dado
+   with connection() as con :
+       cur = con.cursor()
+       try :
+           script = "SELECT id, discount, totalValue, sellingDate FROM selling WHERE id = ?"
+           cur.execute(script, (numeroPedido,) )
+           dado = cur.fetchone()
+           return dado
+       finally :
+           cur.close()

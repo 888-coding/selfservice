@@ -183,8 +183,14 @@ def telaVenderConsultar():
             numeroPedido = input("Numero do pedido :  ")
             dado = consultarPorNumeroPedido(numeroPedido)
             if dado:
-                print(f"1. {dado[0]}, 2. {dado[1]}, 3. {dado[2]} 4. {dado[3]} ")
-                input("Digite enter para continuar ...")
+                time.sleep(0.5)
+                print(f"\nPedido : {dado[0]}")
+                time.sleep(0.7)
+                print(f"Data : {dado[3]}")
+                time.sleep(0.7)
+                print(f"Valor total : {dado[2]}")
+                time.sleep(0.7)
+                input("\n\nDigite enter para continuar ...")
             else:
                 time.sleep(1.5)
                 print("Não encontrado !")

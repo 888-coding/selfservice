@@ -109,7 +109,7 @@ def telaVenderConsultar():
     print("----------------")
     print("1. Hoje")
     print("2. Por data")
-    print("3. Por codigo")
+    print("3. Por numero pedido")
     print("0. Sair")
     while True:
         opcao = input("\n> Opção: ")
@@ -174,7 +174,7 @@ def telaVenderConsultar():
         # Parte 3 : Consultar por codigo de pedido
         #
         elif opcao == "3":
-            print("Procurar por codigo.")
+            print("Procurar por numero de pedido.")
             time.sleep(1.0)
             os.system("clear")
             time.sleep(1.0)

@@ -1,6 +1,7 @@
 # tela principal
-import os 
+import os
 from telas.tela_produtos import telaProdutos
+from telas.tela_relatorios import telaRelatorios
 from telas.tela_vender import telaVender
 
 def telaPrincipal():
@@ -20,10 +21,8 @@ def telaPrincipal():
         elif input_value == "2":
             telaVender()
         elif input_value == "3":
-            pass
+            telaRelatorios()
         elif input_value == "0":
             break
-        else: 
+        else:
             input("Opção invlaida.. Pressione Enter")
-
-

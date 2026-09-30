@@ -1,4 +1,5 @@
 import os, time
+from datetime import date
 
 def telaRelatorios():
     while True:
@@ -34,7 +35,17 @@ def telaVendasDiario():
         opcao = input("> OPÇÃO : ")
 
         if opcao == "1":
-            pass
+            os.system("clear")
+            print("RELATORIO DE VENDAS DIÁRIO")
+            print("==========================")
+            time.sleep(1.0)
+            print("DATA DE HOJE : ")
+            hoje = date.today()
+            data_escolhida = hoje.strftime("%Y-%m-%d")
+            print(f"data de hoje : {data_escolhida} ")
+
+            time.sleep(2.0)
+
         elif opcao == "2":
             os.system("clear")
             print("RELATORIO DE VENDAS DIÁRIO")

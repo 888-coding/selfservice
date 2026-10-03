@@ -33,7 +33,7 @@ def telaVendasDiario():
         print("2. DATA ESPECIFICA")
         print("0. SAIR")
         opcao = input("> OPÇÃO : ")
-
+        # HOJE
         if opcao == "1":
             os.system("clear")
             print("RELATORIO DE VENDAS DIÁRIO")
@@ -45,7 +45,7 @@ def telaVendasDiario():
             print(f"data de hoje : {data_escolhida} ")
 
             time.sleep(2.0)
-
+        # DATA ESPECIFICA
         elif opcao == "2":
             os.system("clear")
             print("RELATORIO DE VENDAS DIÁRIO")

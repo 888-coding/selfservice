@@ -14,14 +14,10 @@ ano = input("ano : ")
 
 data_digitada = ano + "-" + mes + "-" + dia
 
-lista_cabecalho, lista_detalhes = serviceRelatorioVendasDiario(data_digitada)
+listaDados = serviceRelatorioVendasDiario(data_digitada)
 
-print("Cabecalho : \n")
-for dado in lista_cabecalho:
+print("Lista : \n")
+for dado in listaDados:
     print("\n Proximo do cabecalho\n")
     print(dado)
 
-print("\nDetalhes : \n")
-for dado in lista_detalhes:
-    print("\nProximo do Detalhes\n")
-    print(dado)

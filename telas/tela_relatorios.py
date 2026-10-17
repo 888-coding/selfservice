@@ -1,5 +1,6 @@
 import os, time
 from datetime import date
+from services.services_relatorios import serviceRelatorioVendasDiario
 
 def telaRelatorios():
     while True:
@@ -45,6 +46,7 @@ def telaVendasDiario():
             print(f"data de hoje : {data_escolhida} ")
 
             time.sleep(2.0)
+            dados = serviceRelatorioVendasDiario(data_escolhida)
         # DATA ESPECIFICA
         elif opcao == "2":
             os.system("clear")
@@ -61,7 +63,8 @@ def telaVendasDiario():
             data_escolhida = ano + "-" + mes + "-" + dia
 
             print(data_escolhida)
-            time.sleep(3.0)
+            time.sleep(2.0)
+            serviceRelatorioVendasDiario(data_escolhida)
         elif opcao == "0":
             break
         else:

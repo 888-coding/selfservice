@@ -12,9 +12,7 @@ def serviceRelatorioVendasDiario(data_escolhida):
                 
                 cur.execute(script, (dataConsulta,) )
                 dados = cur.fetchall()
-                print(f"Dados : {dados} ")
                 for dado in dados :
-                    input(f"dado: {dado}")
                     listaDados.append({"idSelling":dado[0]})
             finally:
                 cur.close()

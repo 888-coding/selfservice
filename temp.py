@@ -18,6 +18,4 @@ listaDados = serviceRelatorioVendasDiario(data_digitada)
 
 print("Lista : \n")
 for dado in listaDados:
-    print("\n Proximo do cabecalho\n")
-    print(dado)
-
+    print(f"idSelling : {dado["idSelling"]}")

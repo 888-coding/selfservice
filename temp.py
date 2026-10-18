@@ -19,3 +19,7 @@ listaDados = serviceRelatorioVendasDiario(data_digitada)
 print("Lista : \n")
 for dado in listaDados:
     print(f"idSelling : {dado["idSelling"]}")
+
+print("Imprimindo o conteudo completo \n")
+
+print(listaDados)

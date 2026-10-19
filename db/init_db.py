@@ -25,6 +25,7 @@ def createDb():
         "id" INTEGER NOT NULL,
         "sellingId" INTEGER,
         "productId" INTEGER,
+        "productName" TEXT,
         "productPrice" INTEGER,
         "productQuantity" INTEGER,
         PRIMARY KEY("id")

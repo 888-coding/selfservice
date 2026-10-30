@@ -23,14 +23,16 @@ def serviceRelatorioVendasDiario(data_escolhida):
                     # Dicionario venda > Incluir os detalhes
                     # --------------------------------------
                     idSelling = dado[0] 
-                    script = "SELECT id, productId, productPrice, productQuantity FROM sellingDetails WHERE sellingId = ?"
+                    script = "SELECT id, productId, productCode, productName, productPrice, productQuantity FROM sellingDetails WHERE sellingId = ?"
                     cur.execute(script, (idSelling,) )
                     produtos = cur.fetchall()
                     for produto in produtos :
                         venda["detalhe"].append({
                             "productId": produto[1],
-                            "productPrize": produto[2],
-                            "productQuantity": produto[3]
+                            "productCode" : produto[2],
+                            "productName" : produto[3],
+                            "productPrize": produto[4],
+                            "productQuantity": produto[5]
                         })
                     # Incluindo dicionario para lista (cada venda)
                     listaDados.append(venda)

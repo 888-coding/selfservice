@@ -22,29 +22,37 @@ def service_venderCadastro(cabecalho, produtos):
             sellingDate,
             discount,
             totalValue
-          )VALUES (?, ?, ?)"""
+            )VALUES (?, ?, ?)"""
             cur.execute(script, (date, discount, totalValue,) )
 
             id_selling = cur.lastrowid
 
             con.commit()
-
-            # TODO: Tem que fazer Looping para cada produto inserido
-            # 2. Inserir no selling details
-            script = """
-                INSERT INTO sellingDetails(
-                sellingId,
-                productId,
-                productPrice,
-                productQuantity
-                ) VALUES(?, ?, ?, ?)
-            """
+            
             valor_total = 0
             for produto in produtos :
+                # TODO : Acrescentar o CODE e NAME do product no sellingDetails
+                # 
+                script = """
+                                INSERT INTO sellingDetails(
+                                sellingId,
+                                productId,
+                                productCode,
+                                productName,
+                                productPrice,
+                                productQuantity
+                                ) VALUES(?, ?, ?, ?, ?, ?)
+                            """
+                # 0 id
+                # 1 code
+                # 2 nome
+                # 3 qte
+                # 4 preco
                 productId = produto[0]
+                productCode, productName = produto[1], produto[2]
                 productPrice = produto[4]
                 productQuantity = produto[3]
-                cur.execute(script, (id_selling, productId, productPrice, productQuantity,) )
+                cur.execute(script, (id_selling, productId, productCode, productName, productPrice, productQuantity,) )
                 con.commit()
                 valor_total += int(productPrice) * int(productQuantity)
 

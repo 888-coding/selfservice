@@ -114,10 +114,13 @@ def telaVenderConsultar():
     while True:
         opcao = input("\n> Opção: ")
 
+        # Por data de Hoje
         if opcao == "1":
             t = time.localtime()
             dia, mes, ano = t.tm_mday, t.tm_mon, t.tm_year
             hoje = f"{ano}-{mes:02d}-{dia:02d}"
+
+            # Chamada do funcao
             dados = service_venderConsultaPorData(hoje)
             time.sleep(0.5)
             print("..consultando")
@@ -149,6 +152,7 @@ def telaVenderConsultar():
 
             data_a_procurar = ano + "-" + mes + "-" + dia
 
+            # Chamada do funcao
             dados = service_venderConsultaPorData(data_a_procurar)
             time.sleep(0.5)
             print("..consultando")
@@ -172,7 +176,6 @@ def telaVenderConsultar():
             input("> Pressione enter para continuar ...")
             break
         # Parte 3 : Consultar por codigo de pedido
-        #
         elif opcao == "3":
             print("Procurar por numero de pedido.")
             time.sleep(1.0)
@@ -181,6 +184,8 @@ def telaVenderConsultar():
             print("Procurar por Numero de pedido")
             print("-----------------------------")
             numeroPedido = input("Numero do pedido :  ")
+
+            # Chamada do funcao
             dado = consultarPorNumeroPedido(numeroPedido)
             if dado:
                 time.sleep(0.5)

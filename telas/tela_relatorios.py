@@ -46,6 +46,7 @@ def telaVendasDiario():
             print(f"data de hoje : {data_escolhida} ")
 
             time.sleep(2.0)
+            # Chamada da funcao
             dados = serviceRelatorioVendasDiario(data_escolhida)
         # DATA ESPECIFICA
         elif opcao == "2":
@@ -64,7 +65,8 @@ def telaVendasDiario():
 
             print(data_escolhida)
             time.sleep(2.0)
-            serviceRelatorioVendasDiario(data_escolhida)
+            # Chamada da funcao
+            dados = serviceRelatorioVendasDiario(data_escolhida)
         elif opcao == "0":
             break
         else:

@@ -48,6 +48,8 @@ def telaVendasDiario():
             time.sleep(2.0)
             # Chamada da funcao
             dados = serviceRelatorioVendasDiario(data_escolhida)
+            # Chamada da funcao
+            imprimirVendasDiario(dados)
         # DATA ESPECIFICA
         elif opcao == "2":
             os.system("clear")
@@ -67,8 +69,25 @@ def telaVendasDiario():
             time.sleep(2.0)
             # Chamada da funcao
             dados = serviceRelatorioVendasDiario(data_escolhida)
+            # Chamada da funcao
+            imprimirVendasDiario(dados)
         elif opcao == "0":
             break
         else:
             print("X ERRO ! OPÇÃO INVÁLIDA")
             time.sleep(2.0)
+
+# Imprimir Relatorio Diario 
+def imprimirVendasDiario(dados):
+    dados = dados 
+    os.system("clear")
+    for dado in dados:
+        print("----------------------------------------------")
+        print(f"Pedido : {dado['idSelling']} - Desconto : {dado['discount']} Total : {dado['totalValue']/100:.2f}")
+        print("> Detalhe da compra : ")
+        detalhes = dado['detalhe']
+        for detalhe in detalhes:
+            print(f"Produto : {detalhe['productCode']} - {detalhe['productName']} Preco: {detalhe['productPrize']/100:.2f} Qte: {detalhe['productQuantity']}")
+        print("")
+
+    input("Continuar ... ")

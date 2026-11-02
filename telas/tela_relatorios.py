@@ -81,6 +81,13 @@ def telaVendasDiario():
 def imprimirVendasDiario(dados):
     dados = dados 
     os.system("clear")
+ 
+    # Calculo do valor total do dia
+    valor_total = 0  
+    for dado in dados:
+        valor_total = valor_total + int(dado['totalValue'])
+    print(f"\nValor total do dia : {(valor_total/100):.2f}\n")
+    # Print dos pedidos
     for dado in dados:
         print("----------------------------------------------")
         print(f"Pedido : {dado['idSelling']} - Desconto : {dado['discount']} Total : {dado['totalValue']/100:.2f}")

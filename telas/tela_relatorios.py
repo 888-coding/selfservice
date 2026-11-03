@@ -1,7 +1,7 @@
 import os, time
 from datetime import date
 from services.services_relatorios import serviceRelatorioVendasDiario
-from rich import print as prt
+from rich import print as rprint
 
 def telaRelatorios():
     while True:
@@ -87,7 +87,7 @@ def imprimirVendasDiario(dados):
     valor_total = 0  
     for dado in dados:
         valor_total = valor_total + int(dado['totalValue'])
-    prt(f"\nValor total do dia : [green]{(valor_total/100):.2f}[/green]\n")
+    rprint(f"\nValor total do dia : [green]{(valor_total/100):.2f}[/green]\n")
     # Print dos pedidos
     for dado in dados:
         print("----------------------------------------------")

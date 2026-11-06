@@ -20,6 +20,18 @@ data_digitada = ano + "-" + mes + "-" + dia
 
 listaDados = serviceRelatorioVendasDiario(data_digitada)
 
+table = Table(title="Star wars movies")
+
+table.add_column("Released", justify="right", style="cyan", no_wrap=True)
+table.add_column("Title", style="magenta")
+table.add_column("Box office", justify="right", style="green")
+
+table.add_row("Dec 20, 2019", "Star Wars: The rise of Skywalker", "$952,110,690")
+
+console = Console()
+console.print(table)
+
+
 print("Lista : \n")
 for dado in listaDados:
     print(f"idSelling : {dado["idSelling"]}")

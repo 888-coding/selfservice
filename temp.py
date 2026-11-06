@@ -1,5 +1,9 @@
 # teste 
 import os
+from rich import print as rprint
+from rich.console import Console
+from rich.table import Table
+
 from services.services_relatorios import serviceRelatorioVendasDiario
 from telas.tela_principal import telaPrincipal
 from db.init_db import checkDb

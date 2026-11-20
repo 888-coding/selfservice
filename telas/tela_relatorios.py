@@ -43,13 +43,12 @@ def telaVendasDiario():
             os.system("clear")
             print("RELATORIO DE VENDAS DIÁRIO")
             print("==========================")
-            time.sleep(1.0)
             print("DATA DE HOJE : ")
             hoje = date.today()
             data_escolhida = hoje.strftime("%Y-%m-%d")
             print(f"data de hoje : {data_escolhida} ")
 
-            time.sleep(2.0)
+            time.sleep(1.5)
             # Chamada da funcao
             dados = serviceRelatorioVendasDiario(data_escolhida)
             # Chamada da funcao
@@ -59,18 +58,14 @@ def telaVendasDiario():
             os.system("clear")
             print("RELATORIO DE VENDAS DIÁRIO")
             print("==========================")
-            time.sleep(1.0)
             print("DATA ESPECÍFICA")
-            dia = input("\n> Dia:").zfill(2)
-            time.sleep(0.8)
-            mes = input("\n> Mês:").zfill(2)
-            time.sleep(0.8)
-            ano = input("\n> Ano:")
-            time.sleep(0.8)
+            dia = input("> Dia: ").zfill(2)
+            mes = input("> Mês: ").zfill(2)
+            ano = input("> Ano: ")
             data_escolhida = ano + "-" + mes + "-" + dia
 
             print(data_escolhida)
-            time.sleep(2.0)
+            time.sleep(1.5)
             # Chamada da funcao
             dados = serviceRelatorioVendasDiario(data_escolhida)
             # Chamada da funcao

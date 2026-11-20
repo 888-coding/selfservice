@@ -3,6 +3,8 @@ import time
 from services.services_produtos import alterar_produto_nome, procurar_todos_produtos, alterar_produto_preco, inativar_produto, reativar_produto_listarProdutosInativos, reativar_produto_inativar
 from services.services_produtos import adicionar_produto
 from services.services_produtos import procurar_codigo
+from rich.console import Console
+from rich.table import Table
 
 def telaProdutos():
     while True:
@@ -102,8 +104,30 @@ def tela_consultar_produtos():
             if dados is None:
                 input("Nao tem dados")
             else:
+                table = Table()
+                table.add_column("ID", style="magenta")
+                table.add_column("Codigo", style="magenta")
+                table.add_column("Nome", style="magenta")
+                table.add_column("Preço", justify="right", style="green")
+                table.add_column("Ativo/Inativo")
+
                 for dado in dados :
-                    print(dado)
+                    # Lista 
+                    # 1. id 
+                    # 2. codigo 
+                    # 3. Nome
+                    # 4. Preco 
+                    # 5. Ativo/Inativo
+                    varIdProduto = f"{dado[0]}"
+                    varCodigoProduto = f"{dado[1]}"
+                    varNomeProduto = f"{dado[2]}"
+                    varPrecoProduto = f"{dado[3]/100:.2f}"
+                    varAtivoInativoProduto = f"{dado[4]}"
+                    table.add_row(varIdProduto,varCodigoProduto, varNomeProduto, varPrecoProduto, varAtivoInativoProduto)
+
+                console = Console()
+                console.print(table)
+
             input("Fim da lista")
             break
 

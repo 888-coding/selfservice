@@ -2,6 +2,9 @@ import os, time
 from datetime import date
 from services.services_relatorios import serviceRelatorioVendasDiario
 from rich import print as rprint
+from rich.console import Console
+from rich.table import Table
+
 
 def telaRelatorios():
     while True:
@@ -90,12 +93,29 @@ def imprimirVendasDiario(dados):
     rprint(f"\nValor total do dia : [green]{(valor_total/100):.2f}[/green]\n")
     # Print dos pedidos
     for dado in dados:
-        print("----------------------------------------------")
+        print("----------------------------------------------\n")
         print(f"Pedido : {dado['idSelling']} - Desconto : {dado['discount']} Total : {dado['totalValue']/100:.2f}")
-        print("> Detalhe da compra : ")
         detalhes = dado['detalhe']
+        table = Table()
+        # Codigo produto 
+        table.add_column("Codigo", justify="left", style="cyan", no_wrap=True)
+        # Nome do Produto 
+        table.add_column("Nome do produto", justify="left", style="magenta")
+        # Preco 
+        table.add_column("Preço", justify="right", style="green")
+        # Quantidade 
+        table.add_column("Quantidade", justify="right")
+
         for detalhe in detalhes:
-            print(f"Produto : {detalhe['productCode']} - {detalhe['productName']} Preco: {detalhe['productPrize']/100:.2f} Qte: {detalhe['productQuantity']}")
+            #print(f"Produto : {detalhe['productCode']} - {detalhe['productName']} Preco: {detalhe['productPrize']/100:.2f} Qte: {detalhe['productQuantity']}")
+            varCodigoProduto = f"{detalhe['productCode']}"
+            varNomeProduto = f"{detalhe['productName']}"
+
+            varPrecoProduto = f"{detalhe['productPrize']/100:.2f}"
+            varQuantidadeProduto = f"{detalhe['productQuantity']}"
+            table.add_row(varCodigoProduto, varNomeProduto, varPrecoProduto, varQuantidadeProduto)
         print("")
+        console = Console()
+        console.print(table)
 
     input("Continuar ... ")

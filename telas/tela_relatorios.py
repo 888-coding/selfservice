@@ -20,7 +20,7 @@ def telaRelatorios():
         if opcao == "1":
             telaVendasDiario()
         elif opcao == "2":
-            pass
+            telaRelatorioMensal()
         elif opcao == "3":
             pass
         elif opcao == "0":
@@ -114,3 +114,11 @@ def imprimirVendasDiario(dados):
         console.print(table)
 
     input("Continuar ... ")
+
+def telaRelatorioMensal():
+    os.system("clear")
+    print("Relatorio Mensal")
+    print("----------------")
+    print("Digite o ano : ")
+    print("Digite o mes : ")
+    input("Digite algo para continuar ..")
